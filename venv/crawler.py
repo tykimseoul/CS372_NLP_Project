@@ -5,29 +5,50 @@ import pandas as pd
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 1000)
 
-base_url = "https://api.stackexchange.com/2.2/questions/61522715"
+page_size = 20
+base_url = "https://api.stackexchange.com/2.2/questions"
 
 params = {
     "site": "stackoverflow",
-    'key': 'bekvFShStjiqRY6zNwJNHA(('
+    'key': 'bekvFShStjiqRY6zNwJNHA((',
+    'sort': 'activity',
+    'order': 'desc',
+    'page': 1,
+    'pagesize': page_size
 }
 
-page = requests.get(base_url, params=params).json()
+
+def parse_question(question):
+    question_id = question['question_id']
+    tags = question['tags']
+    answer_count = question['answer_count']
+    last_activity_date = question['last_activity_date']
+    link = question['link']
+    title = question['title']
+
+    html = requests.get(link)
+    soup = BeautifulSoup(html.text, "html.parser")
+    content = soup.findAll(class_='post-text')
+
+    return question_id, title, link, content, tags, last_activity_date, answer_count
+
 
 meta_data = []
 
-items = page['items'][0]
-tags = items['tags']
-answer_count = items['answer_count']
-last_edit_date = items['last_edit_date']
-question_id = items['question_id']
-link = items['link']
-title = items['title']
+for i in range(1, int(10000 / page_size) + 1):
+    print('crawling page {}'.format(i))
+    params['page'] = i
+    page = requests.get(base_url, params=params).json()
+    has_more = page['has_more']
+    quota_remaining = page['quota_remaining']
+    print('quota remaining: {}'.format(quota_remaining))
+    if not has_more or quota_remaining == 0:
+        print('crawling terminated')
+    items = page['items']
+    meta_data.extend(map(lambda q: parse_question(q), items))
 
-html = requests.get(link)
-soup = BeautifulSoup(html.text, "html.parser")
-content = soup.findAll(class_='post-text')
-
-meta_data.append((question_id, title, link, content, tags, last_edit_date, answer_count))
-df = pd.DataFrame(meta_data, columns=['id', 'title', 'link', 'content', 'tags', 'last_edit', 'answer_count'])
-print(df.head())
+df = pd.DataFrame(meta_data, columns=['id', 'title', 'link', 'content', 'tags', 'last_activity', 'answer_count'])
+df.drop_duplicates(subset='id', keep='first', inplace=True)
+df.to_csv('question_corpus.csv', index=False, header=True)
+print(df.head(10))
+print(df.describe())
