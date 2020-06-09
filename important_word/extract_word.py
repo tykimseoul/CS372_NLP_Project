@@ -65,30 +65,32 @@ def build_grammar(word_dict):
     S -> S N | N S | S V | V S | NP | VP
     NP -> N NP | Det N | NP N | Det NP | NP NP | Adj NP | N N | N Det | Adj N | NP Det
     VP -> V NP | V S | V NP PP | Det VP | VP VP | Adv VP | V Det | Det V | V VP | V V | VP Det
-    Det -> 'the' | 'that' | 'and' | Det Det | Adj Det
-    N -> 'hiv' 
+    Det -> Det Det | Adj Det
     Adv -> Adv Adv | Det Adv
     '''
 
     noun_list = ["'" + w + "'" for w in word_dict['Noun']]
     verb_list = ["'" + w + "'" for w in word_dict['Verb']]
     adjective_list = ["'" + w + "'" for w in word_dict['Adj']]
+    adverb_list = ["'" + w + "'" for w in word_dict['Adv']]
     det_list = ["'" + w + "'" for w in word_dict['Det']]
 
 
     nouns = "|".join(noun_list)
     verbs = "|".join(verb_list)
     adjectives = "|".join(adjective_list)
+    adverbs = "|".join(adverb_list)
     dets = "|".join(det_list)
 
     grammar += "\n N ->" + nouns
     grammar += "\n V ->" + verbs
     grammar += "\n Adj ->" + adjectives
     grammar += "\n Det ->" + dets
+    grammar += "\n Adv ->" + adverbs
 
     return grammar
 
-def get_depth(tree, word, depth = 0):
+def get_depth(tree, word, depth = 1):
     greatest_depth = depth
     for subtree in tree:
         if type(subtree) is nltk.tree.Tree:
@@ -203,6 +205,8 @@ if __name__ == "__main__":
 
     idf_dict = idf(data)
 
+    noun_symbols = ['NN', 'NNS', 'NNP', 'NNPS']
+
     for i in range(0, num_documents):
         word_importance = list()
         document = load_document(data["content"][i])
@@ -213,10 +217,15 @@ if __name__ == "__main__":
         tf_dict = tf(document)
 
         for sentence in document:
-            for word in sentence:
-                word_importance.append((word, tf_dict[word]*idf_dict[word]*avg_depth_dict[word]))
+            tagged_sentence = nltk.pos_tag(sentence)
+            for word, tag in tagged_sentence:
+                if tag  in noun_symbols and word not in [item[0] for item in word_importance]:
+                    try:
+                        word_importance.append((word, tf_dict[word]*idf_dict[word]*avg_depth_dict[word]))
+                    except:
+                        print("eleminate")
         
-        sorted(word_importance, key = cmp_to_key(lambda pair1, pair2 : pair1[1] - pair2[1]))
+        word_importance.sort(key = lambda item : item[1], reverse = True)
 
         tags = word_importance[:5]
 
