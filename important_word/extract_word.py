@@ -70,15 +70,21 @@ def build_grammar(word_dict):
     Adv -> Adv Adv | Det Adv
     '''
 
-    nouns = "|".join(word_dict['Noun'])
-    verbs = "|".join(word_dict['Verb'])
-    adjectives = "|".join(word_dict['Adj'])
-    dets = "|".join(word_dict['Det'])
+    noun_list = ["'" + w + "'" for w in word_dict['Noun']]
+    verb_list = ["'" + w + "'" for w in word_dict['Verb']]
+    adjective_list = ["'" + w + "'" for w in word_dict['Adj']]
+    det_list = ["'" + w + "'" for w in word_dict['Det']]
 
-    grammar += "N->" + nouns
-    grammar += "V->" + verbs
-    grammar += "Adj->" + adjectives
-    grammar += "Det->" + dets
+
+    nouns = "|".join(noun_list)
+    verbs = "|".join(verb_list)
+    adjectives = "|".join(adjective_list)
+    dets = "|".join(det_list)
+
+    grammar += "\n N ->" + nouns
+    grammar += "\n V ->" + verbs
+    grammar += "\n Adj ->" + adjectives
+    grammar += "\n Det ->" + dets
 
     return grammar
 
@@ -99,17 +105,18 @@ def get_depth(tree, word, depth = 0):
 
 
 def get_avg_depth_dict(document, grammar):
-    parser = nltk.ShiftReduceParser(grammar, trace = 1)
+    print(grammar)
+    parser = nltk.ShiftReduceParser(nltk.CFG.fromstring(grammar), trace = 1)
     depth_dict = dict()
     for sentence in document:
         tree = parser.parse(sentence)
         for word in sentence:
             depth = get_depth(tree, word)
             if word in depth_dict.keys():
-                depth_dict[word][0] += 1
-                depth_dict[word][1] += depth
+                freq, prev_depth = depth_dict[word]
+                depth_dict[word] = (freq + 1, prev_depth + 1)
             else:
-                depth_dict[word] = (0, depth)
+                depth_dict[word] = (1, depth)
 
     avg_depth_dict = dict()
     for word, (freq, depth_sum) in depth_dict.items():
@@ -184,7 +191,7 @@ def idf(data):
                     num_document_dict[word] = 1
 
     idf_dict = dict()
-    for word, freq in num_document_dict:
+    for word, freq in num_document_dict.items():
         idf_dict[word] = math.log(num_documents/freq)
     
     return idf_dict
