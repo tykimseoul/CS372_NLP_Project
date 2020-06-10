@@ -9,7 +9,8 @@ from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer 
 
-num_documents = 20
+num_documents = 50
+maximum_depth = 30
 
 def load_document(raw_text):
     soup = BeautifulSoup(raw_text, "html.parser")
@@ -93,6 +94,8 @@ def build_grammar(word_dict):
 
 def get_depth(tree, word, depth = 1):
     greatest_depth = depth
+    if depth > maximum_depth:
+        return -1
     for subtree in tree:
         if type(subtree) is nltk.tree.Tree:
             analyzed_depth = get_depth(subtree, word, depth + 1) 
