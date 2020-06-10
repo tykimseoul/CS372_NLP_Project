@@ -1,6 +1,7 @@
 import nltk
 import pandas as pd
 import re
+import csv
 import math
 from functools import cmp_to_key
 from nltk.tokenize import RegexpTokenizer
@@ -207,6 +208,9 @@ if __name__ == "__main__":
 
     noun_symbols = ['NN', 'NNS', 'NNP', 'NNPS']
 
+    fp = open("output.csv", 'w')
+    csvwriter = csv.writer(fp)
+
     for i in range(0, num_documents):
         word_importance = list()
         document = load_document(data["content"][i])
@@ -228,6 +232,9 @@ if __name__ == "__main__":
         word_importance.sort(key = lambda item : item[1], reverse = True)
 
         tags = word_importance[:5]
+        csvwriter.writerow(tags)
+
+    fp.close()
 
 
 
