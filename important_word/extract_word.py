@@ -3,6 +3,7 @@ import pandas as pd
 import re
 import csv
 import math
+from collections import deque
 from functools import cmp_to_key
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
@@ -11,8 +12,26 @@ from nltk.stem import WordNetLemmatizer
 
 num_documents = 50
 maximum_depth = 30
+include_code = False
 
-def load_document(raw_text):
+def load_document(raw_text, include_code = True):
+    detection_list = deque()
+    raw_text_without_code = ""
+    if not include_code:
+        is_code = False
+        for w in raw_text:
+            detection_list.append(w)
+            if len(detection_list) > 7:
+                detection_list.popleft()
+                if "<code>" in ''.join(detection_list):
+                    is_code = True
+                if "</code>" in ''.join(detection_list):
+                    is_code = False
+                
+                if not is_code:
+                    raw_text_without_code += w
+        raw_text = raw_text_without_code
+
     soup = BeautifulSoup(raw_text, "html.parser")
     text = soup.findAll(text=True, recursive=True)
     spt = re.split(r'[^a-zA-Z\']|\s+', ' '.join(text))
@@ -103,7 +122,7 @@ def get_depth(tree, word, depth = 1):
                 greatest_depth = analyzed_depth
         else:
             if "'" + subtree + "'" == word:
-                print("leave : {}, depth : {}".format(subtree, depth))
+                #print("leave : {}, depth : {}".format(subtree, depth))
                 return depth + 1
             else:
                 return -1
@@ -111,7 +130,7 @@ def get_depth(tree, word, depth = 1):
 
 
 def get_avg_depth_dict(document, grammar):
-    print(grammar)
+    #print(grammar)
     parser = nltk.ShiftReduceParser(nltk.CFG.fromstring(grammar), trace = 1)
     depth_dict = dict()
     for sentence in document:
@@ -168,7 +187,7 @@ def tf(document):
 def get_word_count_dict(data):
     word_count_dict = dict()
     for i in range(0, num_documents):
-        document = load_document(data["content"][i])
+        document = load_document(data["content"][i], include_code)
         for sentence in document:
             for w in sentence:
                 if w in word_count_dict.keys():
@@ -188,7 +207,7 @@ def idf(data):
     word_count_dict = get_word_count_dict(data)
     num_document_dict = dict()
     for i in range(0, num_documents):
-        document = load_document(data["content"][i])
+        document = load_document(data["content"][i], include_code)
         for word in word_count_dict.keys():
             if contains_word(document, word):
                 if word in num_document_dict.keys():
@@ -216,7 +235,8 @@ if __name__ == "__main__":
 
     for i in range(0, num_documents):
         word_importance = list()
-        document = load_document(data["content"][i])
+        document = load_document(data["content"][i], include_code)
+        print(document)
         word_dict = build_word_dict(document)
         grammar = build_grammar(word_dict)
         avg_depth_dict = get_avg_depth_dict(document, grammar)
