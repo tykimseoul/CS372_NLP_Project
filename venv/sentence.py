@@ -6,6 +6,14 @@ from html.parser import HTMLParser
 import re
 import math
 
+NUM_DOCUMENTS = 100
+MAX_NUM_TAGS = 5
+INCLUDE_CODE = False
+FILE_CORPUS = 'question_corpus.csv'
+FILE_OUTPUT_SENT = 'output_sent.csv'
+
+
+
 def linetoindex(pos, code):
     result  = []
     for (line, off) in code:
@@ -83,24 +91,34 @@ def count_num(document):
     return [len(sent) for sent in document]
 
 def sort_count(doc):
-    indexed = [ tuple((i+1, doc[i])) for i in range(len(doc)) ]
-    sorted_list = [i for (i, n) in sorted(indexed, key=lambda x:x[1], reverse = True)]
-    return sorted_list[:5] if len(sorted_list)>5 else sorted_list
+    indexed = [ tuple((i, doc[i])) for i in range(len(doc)) ]
+    sorted_list = [(i,n) for (i, n) in sorted(indexed, key=lambda x:x[1], reverse = True)]
+    return sorted_list[:MAX_NUM_TAGS] if len(sorted_list)>MAX_NUM_TAGS else sorted_list
         
 
-data = pd.read_csv('question_corpus.csv')
-data = data[:300]
-data['content'] = data['content'].map(lambda c: exclude_code(c))
+data = pd.read_csv(FILE_CORPUS)
+data = data[:NUM_DOCUMENTS]
 
+# if INCLUDE_CODE option is set to False, strip the content of src codes
+if(not INCLUDE_CODE):
+    data['content'] = data['content'].map(lambda c: exclude_code(c))
+
+# list of sentences in the content after stripping off tags
 data['sent'] = data['content'].map(lambda c: strip_tags(c))
+# list of number of sentences after stripping tags
 data['num_sent'] = data['sent'].map(lambda c: count_num(c))
 
+# list of list of Noun/Adjectives in each tagged sentence
 data['tagged'] = data['sent'].map(lambda s: pos_tagger(s))
+# list of the number of Noun/Adjs in each tagged sentence
 data['num_tagged'] = data['tagged'].map(lambda c: count_num(c))
 
+# list of dictionaries (whose keys are the Noun/Adjs of each sentence)
 data['filtered'] = data['tagged'].map(lambda s: make_dict(s))
+# list of length (number of keys) of the above dictionaries
 data['num_filtered'] = data['filtered'].map(lambda c: count_num(c))
-data['sorted'] = data['num_filtered'].map(lambda c: sort_count(c))
+# list of tags 
+data['tags'] = data['num_filtered'].map(lambda c: sort_count(c))
 
-data[['sent','filtered', 'sorted']].to_csv('output300.csv', index=False, header=True)
+data[['sent','num_sent','tagged','num_tagged','filtered','num_filtered', 'tags']].to_csv(FILE_OUTPUT_SENT, index=False, header=True)
 

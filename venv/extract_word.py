@@ -10,14 +10,17 @@ from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer 
 
-num_documents = 300
-maximum_depth = 30
-include_code = False
+NUM_DOCUMENTS = 100
+MAX_NUM_TAGS = 5
+INCLUDE_CODE = False
+MAX_DEPTH = 30
+FILE_CORPUS = 'question_corpus.csv'
+FILE_OUTPUT_WORD = 'output_word.csv'
 
-def load_document(raw_text, include_code = True):
+def load_document(raw_text, INCLUDE_CODE = True):
     detection_list = deque()
     raw_text_without_code = ""
-    if not include_code:
+    if not INCLUDE_CODE:
         is_code = False
         for w in raw_text:
             detection_list.append(w)
@@ -31,14 +34,14 @@ def load_document(raw_text, include_code = True):
                 if not is_code:
                     raw_text_without_code += w
         raw_text = raw_text_without_code
-
+    
     soup = BeautifulSoup(raw_text, "html.parser")
     text = soup.findAll(text=True, recursive=True)
     spt = re.split(r'[^a-zA-Z\']|\s+', ' '.join(text))
     spt = list(filter(lambda s: len(s) > 0, spt))
     combined_text = ' '.join(spt)
     sentences = combined_text.split('.')
-    tokenizer = RegexpTokenizer("[\w']+")
+    tokenizer = RegexpTokenizer(r"[\w']+")
     processed_sentence_list = list()
     for sentence in sentences:
         tokenized_words = tokenizer.tokenize(sentence)
@@ -77,7 +80,7 @@ def build_word_dict(document):
             else:
                 if word not in word_dict['Det']:
                     word_dict['Det'].append(word)
-
+    
     return word_dict
 
 def build_grammar(word_dict):
@@ -89,32 +92,32 @@ def build_grammar(word_dict):
     Det -> Det Det | Adj Det
     Adv -> Adv Adv | Det Adv
     '''
-
+    
     noun_list = ["'" + w + "'" for w in word_dict['Noun']]
     verb_list = ["'" + w + "'" for w in word_dict['Verb']]
     adjective_list = ["'" + w + "'" for w in word_dict['Adj']]
     adverb_list = ["'" + w + "'" for w in word_dict['Adv']]
     det_list = ["'" + w + "'" for w in word_dict['Det']]
-
-
+    
+    
     nouns = "|".join(noun_list)
     verbs = "|".join(verb_list)
     adjectives = "|".join(adjective_list)
     adverbs = "|".join(adverb_list)
     dets = "|".join(det_list)
-
+    
     grammar += "\n N ->" + nouns
     grammar += "\n V ->" + verbs
     grammar += "\n Adj ->" + adjectives
     grammar += "\n Det ->" + dets
     grammar += "\n Adv ->" + adverbs
-
+    
     return grammar
 
 # Get depth of the word parse tree in the corpus
 def get_depth(tree, word, depth = 1):
     greatest_depth = depth
-    if depth > maximum_depth:
+    if depth > MAX_DEPTH:
         return -1
     for subtree in tree:
         if type(subtree) is nltk.tree.Tree:
@@ -143,11 +146,11 @@ def get_avg_depth_dict(document, grammar):
                 depth_dict[word] = (freq + 1, prev_depth + 1)
             else:
                 depth_dict[word] = (1, depth)
-
+    
     avg_depth_dict = dict()
     for word, (freq, depth_sum) in depth_dict.items():
         avg_depth_dict[word] = depth_sum/freq
-
+    
     return avg_depth_dict
 
 # True if word contains only lowercase alphabets and numbers
@@ -156,10 +159,10 @@ def is_valid_word(word):
         if not ((0x30 <= ord(letter) and ord(letter) <= 0x39) or \
         (0x61 <= ord(letter) and ord(letter) <= 0x7a)):
             return False
-
+    
     if word in stopwords.words('English'):
         return False
-
+    
     return True
 
 # Calculate Term frequency for each word in document
@@ -172,24 +175,24 @@ def tf(document):
                     word_count_dict[w] += 1
                 else:
                     word_count_dict[w] = 1
-
+    
     highest_frequency = 0
     for word, freq in word_count_dict.items():
         if freq > highest_frequency:
             highest_frequency = freq
-    
+       
     tf_dict = dict()
-
+    
     for word,freq in word_count_dict.items():
         tf_dict[word] = 0.5 + 0.5*(freq/highest_frequency)
-
+    
     return tf_dict
 
 # Get dictionary of word occurrences from the given data
 def get_word_count_dict(data):
     word_count_dict = dict()
-    for i in range(0, num_documents):
-        document = load_document(data["content"][i], include_code)
+    for i in range(0, NUM_DOCUMENTS):
+        document = load_document(data["content"][i], INCLUDE_CODE)
         for sentence in document:
             for w in sentence:
                 if w in word_count_dict.keys():
@@ -210,46 +213,47 @@ def contains_word(document, word):
 def idf(data):
     word_count_dict = get_word_count_dict(data)
     num_document_dict = dict()
-    for i in range(0, num_documents):
-        document = load_document(data["content"][i], include_code)
+    for i in range(0, NUM_DOCUMENTS):
+        document = load_document(data["content"][i], INCLUDE_CODE)
         for word in word_count_dict.keys():
             if contains_word(document, word):
                 if word in num_document_dict.keys():
                     num_document_dict[word] += 1
                 else:
                     num_document_dict[word] = 1
-
+    
     idf_dict = dict()
     for word, freq in num_document_dict.items():
-        idf_dict[word] = math.log(num_documents/freq)
+        idf_dict[word] = math.log(NUM_DOCUMENTS/freq)
     
     return idf_dict
 
 if __name__ == "__main__":
-
-    data = pd.read_csv('question_corpus.csv')
+    
+    data = pd.read_csv(FILE_CORPUS)
     data = data[:300]
-
+    
     # Construct idf dictionary from whole data
     idf_dict = idf(data)
-
+    
     noun_symbols = ['NN', 'NNS', 'NNP', 'NNPS']
-
-    fp = open("output.csv", 'w')
+    
+    fp = open(FILE_OUTPUT_WORD, 'w', encoding='utf-8', newline='')
     csvwriter = csv.writer(fp)
-
-    for i in range(0, num_documents):
+    
+    
+    for i in range(0, NUM_DOCUMENTS):
         word_importance = list()
         # Load each content
-        document = load_document(data["content"][i], include_code)
-        print(document)
+        document = load_document(data["content"][i], INCLUDE_CODE)
+        #print(document)
         word_dict = build_word_dict(document)
         grammar = build_grammar(word_dict)
         avg_depth_dict = get_avg_depth_dict(document, grammar)
-
+        
         # Construct term frequency dictionary with each document
         tf_dict = tf(document)
-
+        
         for sentence in document:
             tagged_sentence = nltk.pos_tag(sentence)
             for word, tag in tagged_sentence:
@@ -258,14 +262,16 @@ if __name__ == "__main__":
                         # Use tf * idf * depth to score each word
                         word_importance.append((word, tf_dict[word]*idf_dict[word]*avg_depth_dict[word]))
                     except:
-                        print("eleminate")
+                        print("eliminate")
         
-        # Sort and extract top 5 words as tags
+        # Sort and extract top (up to) MAX_NUM_TAGS words as tags
         word_importance.sort(key = lambda item : item[1], reverse = True)
-
-        tags = word_importance[:5]
-        csvwriter.writerow(tags)
-
+        
+        words_important = word_importance[:MAX_NUM_TAGS]
+        tags = [word for (word, importance) in words_important] 
+        scores = [importance for (word, importance) in words_important]
+        csvwriter.writerow([tags, scores])
+        
     fp.close()
 
 

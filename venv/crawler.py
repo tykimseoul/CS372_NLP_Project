@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+FILE_CORPUS = 'question_corpus.csv'
+
+
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 1000)
 
@@ -25,11 +28,11 @@ def parse_question(question):
     last_activity_date = question['last_activity_date']
     link = question['link']
     title = question['title']
-
+    
     html = requests.get(link)
     soup = BeautifulSoup(html.text, "html.parser")
     content = soup.findAll(class_='post-text')
-
+    
     return question_id, title, link, content, tags, last_activity_date, answer_count
 
 
@@ -49,6 +52,6 @@ for i in range(1, int(10000 / page_size) + 1):
 
 df = pd.DataFrame(meta_data, columns=['id', 'title', 'link', 'content', 'tags', 'last_activity', 'answer_count'])
 df.drop_duplicates(subset='id', keep='first', inplace=True)
-df.to_csv('question_corpus.csv', index=False, header=True)
+df.to_csv(FILE_CORPUS, index=False, header=True)
 print(df.head(10))
 print(df.describe())
