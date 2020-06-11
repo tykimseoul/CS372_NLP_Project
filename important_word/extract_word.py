@@ -111,6 +111,7 @@ def build_grammar(word_dict):
 
     return grammar
 
+# Get depth of the word parse tree in the corpus
 def get_depth(tree, word, depth = 1):
     greatest_depth = depth
     if depth > maximum_depth:
@@ -128,7 +129,7 @@ def get_depth(tree, word, depth = 1):
                 return -1
     return greatest_depth
 
-
+# Gets average depth of each word in the document
 def get_avg_depth_dict(document, grammar):
     #print(grammar)
     parser = nltk.ShiftReduceParser(nltk.CFG.fromstring(grammar), trace = 1)
@@ -149,7 +150,7 @@ def get_avg_depth_dict(document, grammar):
 
     return avg_depth_dict
 
-
+# True if word contains only lowercase alphabets and numbers
 def is_valid_word(word):
     for letter in word:
         if not ((0x30 <= ord(letter) and ord(letter) <= 0x39) or \
@@ -161,7 +162,7 @@ def is_valid_word(word):
 
     return True
 
-
+# Calculate Term frequency for each word in document
 def tf(document):
     word_count_dict = dict()
     for sentence in document:
@@ -184,6 +185,7 @@ def tf(document):
 
     return tf_dict
 
+# Get dictionary of word occurrences from the given data
 def get_word_count_dict(data):
     word_count_dict = dict()
     for i in range(0, num_documents):
@@ -197,12 +199,14 @@ def get_word_count_dict(data):
     
     return word_count_dict
 
+# true if document contains word false otherwise
 def contains_word(document, word):
     for sentence in document:
         if word in sentence:
             return True
     return False
 
+# Calculate Inverse document frequenchy
 def idf(data):
     word_count_dict = get_word_count_dict(data)
     num_document_dict = dict()
@@ -226,6 +230,7 @@ if __name__ == "__main__":
     data = pd.read_csv('question_corpus.csv')
     data = data[:300]
 
+    # Construct idf dictionary from whole data
     idf_dict = idf(data)
 
     noun_symbols = ['NN', 'NNS', 'NNP', 'NNPS']
@@ -235,12 +240,14 @@ if __name__ == "__main__":
 
     for i in range(0, num_documents):
         word_importance = list()
+        # Load each content
         document = load_document(data["content"][i], include_code)
         print(document)
         word_dict = build_word_dict(document)
         grammar = build_grammar(word_dict)
         avg_depth_dict = get_avg_depth_dict(document, grammar)
 
+        # Construct term frequency dictionary with each document
         tf_dict = tf(document)
 
         for sentence in document:
@@ -248,10 +255,12 @@ if __name__ == "__main__":
             for word, tag in tagged_sentence:
                 if tag  in noun_symbols and word not in [item[0] for item in word_importance]:
                     try:
+                        # Use tf * idf * depth to score each word
                         word_importance.append((word, tf_dict[word]*idf_dict[word]*avg_depth_dict[word]))
                     except:
                         print("eleminate")
         
+        # Sort and extract top 5 words as tags
         word_importance.sort(key = lambda item : item[1], reverse = True)
 
         tags = word_importance[:5]
