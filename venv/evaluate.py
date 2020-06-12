@@ -8,6 +8,7 @@ from nltk.stem.lancaster import LancasterStemmer
 stm = LancasterStemmer()
 from collections import defaultdict
 import requests
+import ast
 
 NUM_DOCUMENTS = 50
 FILE_CORPUS = 'question_corpus.csv'
@@ -53,6 +54,7 @@ def match_word(word1, word2, strict):
         if (len(wn.synsets(word1_alpha))>0 and len(wn.synsets(word2_alpha))>0):
             if(stm.stem(word1_alpha) == stm.stem(word2_alpha)):
                 return True
+        return False
 
 # identifies whether word1(str) matches words2(list(str))
 # if inclusive == True, checks whether word1 matches an element of words2
@@ -62,7 +64,7 @@ def match_words(word1, words2, inclusive, strict):
     else:
         for word2 in words2:
             if(match_word(word1, word2, strict)): return True
-        return False
+    return False
 
 
 # Collects the NUM_TAGS_POP most popular tags on stackoverflow and their usage-counts 
@@ -96,26 +98,29 @@ data_corpus = pd.read_csv(FILE_CORPUS)[:NUM_DOCUMENTS]
 # ..whose entries are, in turn, lists of the tags split by '-'
 # e.g.) if the tags were [foo, bar-baz], the corresponding entry in tags_real would be [[foo],[bar,baz]]  
 tags_real = []
-for tags in data_corpus['tags']:
-    tags_real.append([tag.split('-') for tag in tags])
+for strtags in data_corpus['tags']:
+    tags_real.append([tag.split('-') for tag in ast.literal_eval(strtags)])
 
 # Store evaluation results of file_output for i-th document in result_eval[i][file_output]
-result_eval = defaultdict(dict)
+result_eval = defaultdict(defaultdict)
 
 for file_output in FILES_OUTPUT:
     data_output = pd.read_csv(file_output)
-    tags_output = data_output['tags']
+    strtags_output = data_output['tags']
     
     for i in range(NUM_DOCUMENTS):
+        
         result_eval[i][file_output] = dict()
         
         tags_correct = set() # predicted tags that match one of the actual tags
         tags_missed = list() # predicted tags that do not match any of the actual tags
         tags_leftout = set() # actual tags that match with none of the predicted tags 
         
+        tags_output = ast.literal_eval(strtags_output[i])
+        
         for tag_words in tags_real[i]:
             found_match = False
-            for tag_output in tags_output[i]:
+            for tag_output in tags_output:
                 if(match_words(tag_output, tag_words, INCLUSIVE, STRICT)):
                     found_match = True
                     tags_correct.add(tag_output)
@@ -124,9 +129,9 @@ for file_output in FILES_OUTPUT:
             else:
                 tags_leftout.add('-'.join(tag_words))
         
-        tags_missed = [tag_output for tag_output in tags_output[i] if tag_output not in tags_correct]
-        result_eval[i][file_output]['ratio-correct'] = len(tags_correct)/len(tags_output[i]) if tags_output[i] else 0
-        result_eval[i][file_output]['ratio-match'] = len([tag_real for tag_real in tags_real[i] if tag_real not in tags_leftout])/len(tags_real[i]) if tags_real[i] else 0
+        tags_missed = [tag_output for tag_output in tags_output if tag_output not in tags_correct]
+        result_eval[i][file_output]['ratio-correct'] = (len(tags_correct)/len(tags_output)) if (len(tags_output)>0) else 0
+        result_eval[i][file_output]['ratio-match'] = (len([tag_real for tag_real in tags_real[i] if '-'.join(tag_real) not in tags_leftout])/len(tags_real[i])) if (len(tags_real[i])>0) else 0
         result_eval[i][file_output]['tags-missed'] = tags_missed
         result_eval[i][file_output]['tags-leftout'] = tags_leftout
         
@@ -134,12 +139,12 @@ for file_output in FILES_OUTPUT:
         for tag_missed in tags_missed:
             for (tag_pop, count) in tags_pop:
                 if(match_words(tag_missed, tag_words, True, False)):
-                    result_eval[i][file_output]['valid-suggestions'].append(tag_missed, tag_pop, count)
+                    result_eval[i][file_output]['valid-suggestions'].append((tag_missed, tag_pop, count))
     
-    result = dict()
+    result = list()
     for i in range(NUM_DOCUMENTS):
-        result[i] = result_eval[i][file_output]
+        result.append( tuple(result_eval[i][file_output].values()))
     
-    df = pd.DataFrame(result, columns=['ratio-correct','ratio-match','tags-missed','tags-leftout','valid-suggestions'])
-    df.drop_duplicates(subset='id', keep='first', inplace=True)
+    df = pd.DataFrame(result, columns=['tags-missed','tags-leftout','valid-suggestions'])
+    #df = pd.DataFrame(result, columns=['ratio-correct','ratio-match','tags-missed','tags-leftout','valid-suggestions'])
     df.to_csv(FILE_HEAD+file_output, index=False, header=True)

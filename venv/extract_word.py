@@ -238,10 +238,10 @@ if __name__ == "__main__":
     
     noun_symbols = ['NN', 'NNS', 'NNP', 'NNPS']
     
-    fp = open(FILE_OUTPUT_WORD, 'w', encoding='utf-8', newline='')
-    csvwriter = csv.writer(fp)
+    #fp = open(FILE_OUTPUT_WORD, 'w', encoding='utf-8', newline='')
+    #csvwriter = csv.writer(fp)
     
-    
+    words_important = []
     for i in range(0, NUM_DOCUMENTS):
         word_importance = list()
         # Load each content
@@ -267,12 +267,15 @@ if __name__ == "__main__":
         # Sort and extract top (up to) MAX_NUM_TAGS words as tags
         word_importance.sort(key = lambda item : item[1], reverse = True)
         
-        words_important = word_importance[:MAX_NUM_TAGS]
-        tags = [word for (word, importance) in words_important] 
-        scores = [importance for (word, importance) in words_important]
-        csvwriter.writerow([tags, scores])
-        
-    fp.close()
+        word_importance = word_importance[:MAX_NUM_TAGS]
+        tags = [word for (word, importance) in word_importance] 
+        scores = [importance for (word, importance) in word_importance]
+        words_important.append((tags,scores))
+        #csvwriter.writerow([tags, scores])
+    
+    df = pd.DataFrame(words_important, columns=['tags', 'scores'])
+    df.to_csv(FILE_OUTPUT_WORD, index=False, header=True)
+    #fp.close()
 
 
 
