@@ -91,17 +91,40 @@ def count_num(document):
     return [len(sent) for sent in document]
 
 def sort_count(doc):
-    indexed = [ tuple((i, doc[i])) for i in range(len(doc)) ]
-    sorted_list = [(i,n) for (i, n) in sorted(indexed, key=lambda x:x[1], reverse = True)]
+    indexed = [ tuple((i+1, doc[i])) for i in range(len(doc)) ]
+    sorted_list = [i for (i, n) in sorted(indexed, key=lambda x:x[1], reverse = True)]
     return sorted_list[:MAX_NUM_TAGS] if len(sorted_list)>MAX_NUM_TAGS else sorted_list
+
+def make_tags(sents, orders):
+    #result = [sents[i-1] for i in orders]
+    
+    result = []
+    if not orders:
+        return result
+    for i in orders:
+        result.extend(sents[i-1])
+    return result
         
+def make_tag(sents, orders):
+    result= []
+    if not orders:
+        return result    
+    return sents[orders[0]-1]
 
-data = pd.read_csv(FILE_CORPUS)
-data = data[:NUM_DOCUMENTS]
 
-# if INCLUDE_CODE option is set to False, strip the content of src codes
-if(not INCLUDE_CODE):
-    data['content'] = data['content'].map(lambda c: exclude_code(c))
+def reverse_pos(sents):
+    result = []
+    for sent in sents:
+        new_sent = []
+        for word in sent:
+            new_sent.append(word[0])
+        result.append(new_sent)
+    return result
+            
+
+data = pd.read_csv(FILE_CORPUS)[:NUM_DOCUMENTS]
+
+data['content'] = data['content'].map(lambda c: exclude_code(c))
 
 # list of sentences in the content after stripping off tags
 data['sent'] = data['content'].map(lambda c: strip_tags(c))
@@ -117,8 +140,10 @@ data['num_tagged'] = data['tagged'].map(lambda c: count_num(c))
 data['filtered'] = data['tagged'].map(lambda s: make_dict(s))
 # list of length (number of keys) of the above dictionaries
 data['num_filtered'] = data['filtered'].map(lambda c: count_num(c))
-# list of tags 
-data['tags'] = data['num_filtered'].map(lambda c: sort_count(c))
+data['sorted'] = data['num_filtered'].map(lambda c: sort_count(c))
 
-data[['sent','num_sent','tagged','num_tagged','filtered','num_filtered', 'tags']].to_csv(FILE_OUTPUT_SENT, index=False, header=True)
+data['reverse_pos'] = data['filtered'].map(lambda c: reverse_pos(c))
+data['tags'] = list(map(lambda x, y: make_tags(x, y), data['reverse_pos'], data['sorted']))
+data['tag'] = list(map(lambda x, y: make_tag(x, y), data['reverse_pos'], data['sorted']))
 
+data[['sent','filtered', 'sorted', 'tags', 'tag']].to_csv(FILE_OUTPUT_SENT, index=False, header=True)

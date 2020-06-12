@@ -12,11 +12,9 @@ import ast
 
 NUM_DOCUMENTS = 50
 FILE_CORPUS = 'question_corpus.csv'
-FILES_OUTPUT = ['output_word.csv']
-#FILES_OUTPUT = ['output_word.csv', 'output_sent.csv']
-FILE_OUTPUT_WORD = 'output_word.csv'
-FILE_OUTPUT_SENT = 'output_sent.csv'
-#FILE_EVAL = 'eval_result.csv'
+FILES_OUTPUT = ['output_word.csv', 'output_sent.csv']
+#FILE_OUTPUT_WORD = 'output_word.csv'
+#FILE_OUTPUT_SENT = 'output_sent.csv'
 
 STRICT = False
 INCLUSIVE = True
@@ -101,20 +99,20 @@ tags_real = []
 for strtags in data_corpus['tags']:
     tags_real.append([tag.split('-') for tag in ast.literal_eval(strtags)])
 
-# Store evaluation results of file_output for i-th document in result_eval[i][file_output]
-result_eval = defaultdict(defaultdict)
 
 for file_output in FILES_OUTPUT:
     data_output = pd.read_csv(file_output)
     strtags_output = data_output['tags']
+    result_eval = dict()
     
     for i in range(NUM_DOCUMENTS):
         
-        result_eval[i][file_output] = dict()
+        result_eval[i] = dict()
         
         tags_correct = set() # predicted tags that match one of the actual tags
         tags_missed = list() # predicted tags that do not match any of the actual tags
         tags_leftout = set() # actual tags that match with none of the predicted tags 
+        pairs_match = set() # (actual tag, predicted tag) pairs that match
         
         tags_output = ast.literal_eval(strtags_output[i])
         
@@ -123,6 +121,7 @@ for file_output in FILES_OUTPUT:
             for tag_output in tags_output:
                 if(match_words(tag_output, tag_words, INCLUSIVE, STRICT)):
                     found_match = True
+                    pairs_match.add(('-'.join(tag_words), tag_output))
                     tags_correct.add(tag_output)
             if (found_match):
                 tags_correct.add(tag_output)
@@ -130,21 +129,28 @@ for file_output in FILES_OUTPUT:
                 tags_leftout.add('-'.join(tag_words))
         
         tags_missed = [tag_output for tag_output in tags_output if tag_output not in tags_correct]
-        result_eval[i][file_output]['ratio-correct'] = (len(tags_correct)/len(tags_output)) if (len(tags_output)>0) else 0
-        result_eval[i][file_output]['ratio-match'] = (len([tag_real for tag_real in tags_real[i] if '-'.join(tag_real) not in tags_leftout])/len(tags_real[i])) if (len(tags_real[i])>0) else 0
-        result_eval[i][file_output]['tags-missed'] = tags_missed
-        result_eval[i][file_output]['tags-leftout'] = tags_leftout
+        result_eval[i]['pairs-match'] = pairs_match
+        result_eval[i]['ratio-correct'] = (len(tags_correct)/len(tags_output)) if (len(tags_output)>0) else 0
+        result_eval[i]['ratio-match'] = (len([tag_real for tag_real in tags_real[i] if '-'.join(tag_real) not in tags_leftout])/len(tags_real[i])) if (len(tags_real[i])>0) else 0
+        result_eval[i]['tags-missed'] = tags_missed
+        result_eval[i]['tags-leftout'] = tags_leftout
         
-        result_eval[i][file_output]['valid-suggestions'] = list()
+        result_eval[i]['valid-suggestions'] = list()
         for tag_missed in tags_missed:
             for (tag_pop, count) in tags_pop:
-                if(match_words(tag_missed, tag_words, True, False)):
-                    result_eval[i][file_output]['valid-suggestions'].append((tag_missed, tag_pop, count))
+                if(match_words(tag_missed, tag_pop.split('-'), True, False)):
+                    result_eval[i]['valid-suggestions'].append((tag_missed, tag_pop, count))
     
     result = list()
     for i in range(NUM_DOCUMENTS):
-        result.append( tuple(result_eval[i][file_output].values()))
+        result.append( tuple(result_eval[i].values()))
     
-    df = pd.DataFrame(result, columns=['tags-missed','tags-leftout','valid-suggestions'])
-    #df = pd.DataFrame(result, columns=['ratio-correct','ratio-match','tags-missed','tags-leftout','valid-suggestions'])
+    df = pd.DataFrame(result, columns=['pairs-match','ratio-correct','ratio-match','tags-missed','tags-leftout','valid-suggestions'])
+    # pairs-match: (predicted tag, actual tag) that match
+    # ratio-correct: number of predicted tags with match / number of predicted tags
+    # ratio-match: number of acutal tags with match / number of actual tags
+    # tags-missed: predicted tags without match
+    # tags-leftout: actual tags without match
+    # valid-suggestions: predicted tags without match that are in tags_pop
+    
     df.to_csv(FILE_HEAD+file_output, index=False, header=True)
