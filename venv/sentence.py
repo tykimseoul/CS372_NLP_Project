@@ -6,6 +6,14 @@ from html.parser import HTMLParser
 import re
 import math
 
+NUM_DOCUMENTS = 100
+MAX_NUM_TAGS = 5
+INCLUDE_CODE = False
+FILE_CORPUS = 'question_corpus.csv'
+FILE_OUTPUT_SENT = 'output_sent.csv'
+
+
+
 def linetoindex(pos, code):
     result  = []
     for (line, off) in code:
@@ -85,22 +93,57 @@ def count_num(document):
 def sort_count(doc):
     indexed = [ tuple((i+1, doc[i])) for i in range(len(doc)) ]
     sorted_list = [i for (i, n) in sorted(indexed, key=lambda x:x[1], reverse = True)]
-    return sorted_list[:5] if len(sorted_list)>5 else sorted_list
-        
+    return sorted_list[:MAX_NUM_TAGS] if len(sorted_list)>MAX_NUM_TAGS else sorted_list
 
-data = pd.read_csv('question_corpus.csv')
-data = data[:300]
+def make_tags(sents, orders):
+    #result = [sents[i-1] for i in orders]
+    
+    result = []
+    if not orders:
+        return result
+    for i in orders:
+        result.extend(sents[i-1])
+    return result
+        
+def make_tag(sents, orders):
+    result= []
+    if not orders:
+        return result    
+    return sents[orders[0]-1]
+
+
+def reverse_pos(sents):
+    result = []
+    for sent in sents:
+        new_sent = []
+        for word in sent:
+            new_sent.append(word[0])
+        result.append(new_sent)
+    return result
+            
+
+data = pd.read_csv(FILE_CORPUS)[:NUM_DOCUMENTS]
+
 data['content'] = data['content'].map(lambda c: exclude_code(c))
 
+# list of sentences in the content after stripping off tags
 data['sent'] = data['content'].map(lambda c: strip_tags(c))
+# list of number of sentences after stripping tags
 data['num_sent'] = data['sent'].map(lambda c: count_num(c))
 
+# list of list of Noun/Adjectives in each tagged sentence
 data['tagged'] = data['sent'].map(lambda s: pos_tagger(s))
+# list of the number of Noun/Adjs in each tagged sentence
 data['num_tagged'] = data['tagged'].map(lambda c: count_num(c))
 
+# list of dictionaries (whose keys are the Noun/Adjs of each sentence)
 data['filtered'] = data['tagged'].map(lambda s: make_dict(s))
+# list of length (number of keys) of the above dictionaries
 data['num_filtered'] = data['filtered'].map(lambda c: count_num(c))
 data['sorted'] = data['num_filtered'].map(lambda c: sort_count(c))
 
-data[['sent','filtered', 'sorted']].to_csv('output300.csv', index=False, header=True)
+data['reverse_pos'] = data['filtered'].map(lambda c: reverse_pos(c))
+data['tags'] = list(map(lambda x, y: make_tags(x, y), data['reverse_pos'], data['sorted']))
+data['tag'] = list(map(lambda x, y: make_tag(x, y), data['reverse_pos'], data['sorted']))
 
+data[['sent','filtered', 'sorted', 'tags', 'tag']].to_csv(FILE_OUTPUT_SENT, index=False, header=True)
