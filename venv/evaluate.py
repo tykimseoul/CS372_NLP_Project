@@ -123,9 +123,7 @@ for file_output in FILES_OUTPUT:
                     found_match = True
                     pairs_match.add(('-'.join(tag_words), tag_output))
                     tags_correct.add(tag_output)
-            if (found_match):
-                tags_correct.add(tag_output)
-            else:
+            if (not found_match):
                 tags_leftout.add('-'.join(tag_words))
         
         tags_missed = [tag_output for tag_output in tags_output if tag_output not in tags_correct]
