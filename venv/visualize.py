@@ -28,6 +28,7 @@ df_word_output = pd.read_csv('output_word.csv')
 df_sent_output = pd.read_csv('output_sent.csv')
 df_corpus = pd.read_csv('question_corpus.csv')
 final_df = pd.DataFrame()
+final_df['id'] = df_corpus['id']
 final_df['text'] = df_corpus['content']
 final_df['real_tags'] = df_corpus.apply(lambda r: ast.literal_eval(r['tags']), axis=1)
 final_df['predicted_tags_from_words'] = df_word_output.apply(lambda r: ast.literal_eval(r['tags']), axis=1)
@@ -45,6 +46,8 @@ final_df['valid_suggestions_from_sents_strict_{}_inclusive_{}'.format(STRICT, IN
 final_df = final_df[:300]
 print(final_df.head(10))
 print(final_df.describe())
+sorted_df = final_df.sort_values('ratio_correct_from_words_strict_{}_inclusive_{}'.format(STRICT, INCLUSIVE), ascending=False)
+print(sorted_df.head(10))
 
 
 def draw_histogram(data, filename):
