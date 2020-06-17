@@ -152,4 +152,4 @@ for file_output in FILES_OUTPUT:
     # tags-leftout: actual tags without match
     # valid-suggestions: predicted tags without match that are in tags_pop
 
-    df.to_csv(FILE_HEAD + file_output, index=False, header=True)
+    df.to_csv(FILE_HEAD + file_output + 'strict_{}_inclusive_{}'.format(STRICT, INCLUSIVE), index=False, header=True)
