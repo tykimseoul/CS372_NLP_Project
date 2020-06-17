@@ -1,0 +1,301 @@
+pairs-match,ratio-correct,ratio-match,tags-missed,tags-leftout,valid-suggestions
+"{('android-spinner', 'android'), ('android', 'android')}",0.2,0.6666666666666666,"['calculator', 'selection', 'note', 'value']",{'kotlin'},"[('selection', 'select', 34913), ('selection', 'css-selectors', 11839), ('selection', 'jquery-selectors', 8480), ('note', 'push-notification', 16753), ('note', 'notifications', 14200), ('note', 'apple-push-notifications', 7384)]"
+set(),0.0,0.0,"['connecte', 'device', 'thank', 'mean', 'application']","{'ios', 'swift', 'android', 'dart', 'flutter'}","[('device', 'devise', 14376), ('application', 'web-applications', 20324)]"
+"{('meteor', 'meteor'), ('mongodb', 'mongodb')}",0.4,0.5,"['denormalizers', 'facilitate', 'insertion']","{'rxjs', 'observable'}","[('insertion', 'insert', 13108)]"
+set(),0.0,0.0,"['duplicate', 'description', 'enter', 'kind', 'attribute']","{'postgresql-9.3', 'postgresql'}","[('duplicate', 'duplicates', 11409), ('enter', 'entity-framework', 84253), ('enter', 'entity-framework-core', 10762), ('enter', 'entity-framework-6', 10238), ('enter', 'entity-framework-4', 7437), ('attribute', 'attributes', 11063)]"
+set(),0.0,0.0,"['asset', 'demand', 'qlpreviewcontroller', 'previewcontroller', 'ar']","{'ios', 'swift', 'quicklook'}",[]
+"{('cx-freeze', 'cx')}",0.2,0.3333333333333333,"['sqla', 'fccc', 'svn', 'idw']","{'python', 'sqlalchemy'}","[('svn', 'svn', 26272)]"
+set(),0.0,0.0,"['swap', 'movement', 'vice', 'versa', 'target']","{'sorting', 'algorithm'}",[]
+set(),0.0,0.0,"['margin', 'sidebar', 'flexbox', 'flex', 'animation']","{'css', 'html'}","[('flexbox', 'flexbox', 15160), ('flex', 'apache-flex', 24150), ('animation', 'animation', 38762)]"
+set(),0.0,0.0,"['nodejs', 'help', 'lass', 'text', 'post']",{'hl7-fhir'},"[('nodejs', 'node.js', 333848), ('text', 'text', 26999), ('text', 'full-text-search', 7065), ('post', 'post', 35896), ('post', 'http-post', 7719)]"
+set(),0.0,0.0,"['jsx', 'behaves', 'bracket', 'fire', 'arrow']","{'ecmascript-6', 'javascript', 'reactjs'}",[]
+set(),0.0,0.0,"['ejs', 'submit', 'body', 'care', 'form']","{'node.js', 'express'}","[('form', 'forms', 101851), ('form', 'django-forms', 15270), ('form', 'format', 10268)]"
+"{('regex', 'regex')}",0.2,0.5,"['period', 'registration', 'letter', 'character']",{'instagram'},"[('character', 'character-encoding', 13791)]"
+"{('titlebar', 'titlebar')}",0.2,0.25,"['mainpage', 'color', 'inherits', 'blank']","{'customization', 'uwp', 'c#'}","[('color', 'colors', 18031), ('inherits', 'inheritance', 36677)]"
+set(),0.0,0.0,"['restrict', 'scroll', 'box', 'break', 'bar']","{'react-select', 'javascript', 'reactjs'}","[('scroll', 'scroll', 19171)]"
+set(),0.0,0.0,"['datafrmae', 'extract', 'output', 'value', 'data']",{'pandas'},"[('output', 'output', 7907), ('data', 'date', 62345), ('data', 'core-data', 27060), ('data', 'data-structures', 26378), ('data', 'data-binding', 21562), ('data', 'spring-data-jpa', 14354), ('data', 'spring-data', 9631)]"
+"{('axios', 'axios'), ('spotify', 'spotify')}",0.4,1.0,"['redux', 'api', 'day']",set(),"[('redux', 'redux', 25114), ('redux', 'react-redux', 15139), ('api', 'api', 79228), ('api', 'facebook-graph-api', 33969), ('api', 'asp.net-web-api', 33708), ('api', 'google-maps-api-3', 24500), ('api', 'google-api', 15867), ('api', 'google-drive-api', 11514), ('api', 'youtube-api', 10039), ('api', 'asp.net-web-api2', 7526)]"
+set(),0.0,0.0,"['median', 'percentile', 'disc', 'aggregate', 'tham']","{'window-functions', 'postgresql', 'sql'}","[('median', 'media-queries', 6873), ('aggregate', 'aggregation-framework', 8466)]"
+"{('probability', 'probability')}",0.2,0.3333333333333333,"['exp', 'precision', 'summation', 'logarithm']","{'statistics', 'python'}","[('summation', 'sum', 11605)]"
+"{('event-listener', 'event'), ('event-listener', 'listener')}",0.4,0.3333333333333333,"['detects', 'manipulates', 'lose']","{'javascript', 'stimulusjs'}",[]
+set(),0.0,0.0,"['cron', 'email', 'concern', 'pull', 'wait']","{'php', 'phpmailer'}","[('cron', 'cron', 14854), ('email', 'email', 53216)]"
+set(),0.0,0.0,"['transition', 'downwards', 'classlist', 'opacity', 'adapt']","{'jquery', 'css', 'javascript', 'html'}",[]
+set(),0.0,0.0,"['lunch', 'dinner', 'pm', 'restaurant', 'june']","{'python', 'python-2.7', 'python-3.x'}",[]
+"{('common-lisp', 'lisp')}",0.2,1.0,"['cell', 'grasp', 'ignorant', 'cl']",set(),[]
+set(),0.0,0.0,"['datasource', 'vikramsinghsengar', 'springbootmultidatasource', 'hibernate', 'fetching']","{'spring-data', 'mysql', 'spring-data-jpa', 'spring-boot'}","[('hibernate', 'hibernate', 83434), ('fetching', 'fetch', 7140)]"
+"{('laravel-route', 'route')}",0.2,0.5,"['uri', 'event', 'duplicate', 'setup']",{'laravel'},"[('event', 'events', 34228), ('event', 'javascript-events', 10660), ('event', 'event-handling', 10615), ('duplicate', 'duplicates', 11409)]"
+set(),0.0,0.0,"['arc', 'leak', 'callback', 'thread', 'memory']","{'ios', 'iphone', 'swift', 'xcode', 'objective-c'}","[('leak', 'memory-leaks', 17962), ('callback', 'callback', 15664), ('thread', 'thread-safety', 8226), ('memory', 'memory', 30978), ('memory', 'memory-management', 24727), ('memory', 'memory-leaks', 17962), ('memory', 'out-of-memory', 7059)]"
+"{('tensor', 'tensor'), ('pytorch', 'pytorch')}",0.4,0.6666666666666666,"['rgb', 'luminance', 'xnxn']",{'python'},[]
+set(),0.0,0.0,"['fragment', 'man', 'visibility', 'activity', 'button']","{'android', 'java', 'android-fragments'}","[('fragment', 'android-fragments', 42332), ('fragment', 'fragment', 7417), ('man', 'memory-management', 24727), ('visibility', 'visual-studio', 96222), ('visibility', 'visual-studio-2010', 46892), ('visibility', 'visual-c++', 28408), ('visibility', 'visual-studio-code', 24324), ('visibility', 'visual-studio-2012', 23126), ('visibility', 'visual-studio-2015', 19567), ('visibility', 'visual-studio-2013', 18850), ('visibility', 'visual-studio-2008', 15726), ('visibility', 'visual-studio-2017', 12410), ('visibility', 'computer-vision', 11541), ('visibility', 'google-visualization', 8388), ('activity', 'android-activity', 27632), ('activity', 'active-directory', 13739), ('activity', 'azure-active-directory', 9842), ('button', 'button', 34419), ('button', 'radio-button', 9355)]"
+"{('list', 'list')}",0.2,0.5,"['crash', 'hi', 'program', 'expression']",{'c++'},"[('crash', 'crash', 11830), ('program', 'functional-programming', 15854), ('program', 'network-programming', 10247), ('expression', 'express', 65274)]"
+"{('pca', 'pca')}",0.2,0.25,"['slvuemp', 'living', 'pensioner', 'slvpens']","{'standardized', 'r', 'psych'}",[]
+set(),0.0,0.0,"['gate', 'manages', 'balance', 'dd', 'research']",{'laravel'},"[('manages', 'memory-management', 24727)]"
+"{('selenium', 'selenium')}",0.2,0.5,"['button', 'course', 'tell', 'advance']",{'python'},"[('button', 'button', 34419), ('button', 'radio-button', 9355)]"
+set(),0.0,0.0,[],"{'android-recyclerview', 'android-studio'}",[]
+set(),0.0,0.0,"['orderitem', 'particulate', 'productid', 'product', 'join']","{'sqlite', 'sql'}","[('join', 'join', 35920)]"
+"{('websocket', 'websocket')}",0.2,0.5,"['reconnect', 'hugues', 'disconnection', 'forgets']",{'node.js'},[]
+set(),0.0,0.0,"['ball', 'programm', 'collision', 'collide', 'interact']","{'canvas', 'python', 'tkinter'}",[]
+set(),0.0,0.0,"['hue', 'accent', 'sc', 'color', 'cs']","{'angular', 'css', 'angular-material'}","[('color', 'colors', 18031)]"
+"{('cpanel', 'cpanel')}",0.2,0.2,"['xxxxxxxx', 'polyfills', 'xxxxxxxxx', 'miracleapp']","{'angular', 'java', 'spring', 'hosting'}",[]
+set(),0.0,0.0,"['detector', 'tfidf', 'similarity', 'dataset', 'dense']",{'python'},"[('dataset', 'dataset', 9077)]"
+set(),0.0,0.0,"['departure', 'arrival', 'epoch', 'export', 'brand']","{'apache-spark', 'scala', 'mongodb'}","[('export', 'export', 7914)]"
+set(),0.0,0.0,"['componentwillmount', 'componentdidmount', 'countdown', 'countdownform', 'parent']","{'jsx', 'html', 'reactjs', 'dom', 'javascript'}",[]
+set(),0.0,0.0,"['reinstall', 'inconsistency', 'speed', 'plugins', 'device']","{'ios', 'typescript', 'ionic3', 'cordova'}","[('plugins', 'plugins', 22758), ('plugins', 'jquery-plugins', 13049), ('device', 'devise', 14376)]"
+set(),0.0,0.0,"['ismechanic', 'loadedmechanics', 'record', 'collection', 'document']","{'google-cloud-firestore', 'typescript', 'firebase', 'angular', 'ionic-framework'}","[('collection', 'collections', 21119), ('collection', 'garbage-collection', 10869)]"
+"{('telegram-bot', 'bot'), ('telegram-bot', 'telegram'), ('telegram', 'telegram')}",0.4,1.0,"['sticker', 'caadagadoqadfyesdlkeqood', 'vkag']",set(),[]
+"{('blazor', 'blazor')}",0.2,0.5,"['mask', 'inputbase', 'imask', 'cshtml']",{'c#'},[]
+"{('queryselector', 'queryselector')}",0.2,0.2,"['templete', 'const', 'document', 'template']","{'string', 'templates', 'keycode', 'javascript'}","[('template', 'templates', 46777), ('template', 'django-templates', 13896)]"
+set(),0.0,0.0,"['marketing', 'april', 'platform', 'developer', 'request']","{'linkedin-api', 'linkedin'}","[('platform', 'google-cloud-platform', 22801), ('platform', 'parse-platform', 19421), ('request', 'request', 13680), ('request', 'python-requests', 13238)]"
+set(),0.0,0.0,"['guidance', 'container', 'option', 'lass', 'text']","{'kubectl', 'logging'}","[('container', 'containers', 7658), ('text', 'text', 26999), ('text', 'full-text-search', 7065)]"
+set(),0.0,0.0,"['join', 'wonder', 'column', 'condition', 'dataframe']","{'apache-spark', 'scala', 'apache-spark-sql'}","[('join', 'join', 35920), ('condition', 'conditional-statements', 7795), ('dataframe', 'dataframe', 70923)]"
+set(),0.0,0.0,"['insertion', 'vanish', 'constant', 'computation', 'measure']","{'big-o', 'sorting', 'complexity-theory', 'algorithm', 'time-complexity'}","[('insertion', 'insert', 13108), ('computation', 'computer-vision', 11541)]"
+set(),0.0,0.0,"['music', 'employer', 'player', 'publishing', 'showcase']","{'redux', 'javascript', 'reactjs'}","[('player', 'google-play', 9484)]"
+"{('mamp-pro', 'mamp')}",0.2,0.25,"['typo', 'vers', 'quickinstall', 'mac']","{'typo3', 'install', 'composer-php'}","[('typo', 'typo3', 7772)]"
+set(),0.0,0.0,"['condition', 'statement', 'file', 'see', 'problem']",{'php'},"[('condition', 'conditional-statements', 7795), ('statement', 'if-statement', 47505), ('statement', 'static', 14585), ('statement', 'statistics', 12410), ('statement', 'switch-statement', 9760), ('statement', 'conditional-statements', 7795), ('file', 'file', 70099), ('file', 'batch-file', 48236), ('file', 'file-upload', 24865), ('file', 'file-io', 19930)]"
+"{('rasa', 'rasa')}",0.2,0.3333333333333333,"['poetry', 'anaconda', 'wont', 'pip']","{'pep', 'python'}","[('anaconda', 'anaconda', 10686), ('pip', 'pip', 14754), ('pip', 'pipe', 8023)]"
+set(),0.0,0.0,"['susan', 'woody', 'peter', 'everybody', 'takle']","{'database', 'forall', 'for-loop', 'sql', 'exists'}",[]
+set(),0.0,0.0,"['loop', 'ajax', 'break', 'search', 'input']","{'arrays', 'javascript'}","[('loop', 'loops', 72951), ('loop', 'for-loop', 51900), ('loop', 'while-loop', 20346), ('ajax', 'ajax', 209528), ('search', 'search', 33189), ('search', 'full-text-search', 7065), ('input', 'input', 28100)]"
+"{('phpstorm', 'phpstorm')}",0.2,0.5,"['sas', 'doesnt', 'compile', 'style']",{'sass'},"[('sas', 'sas', 12535), ('compile', 'compiler-errors', 16373), ('compile', 'compilation', 14954), ('compile', 'compiler-construction', 10870), ('style', 'styles', 7847), ('style', 'coding-style', 7531)]"
+set(),0.0,0.0,"['alarm', 'period', 'manager', 'app', 'service']",{'android'},"[('manager', 'memory-management', 24727), ('app', 'google-app-engine', 44928), ('app', 'in-app-purchase', 8198), ('app', 'app-store', 7244), ('service', 'sql-server', 286894), ('service', 'amazon-web-services', 95827), ('service', 'web-services', 59734), ('service', 'sql-server-2008', 53538), ('service', 'reporting-services', 23313), ('service', 'service', 21299), ('service', 'server', 19725), ('service', 'sql-server-2005', 18402), ('service', 'sql-server-2012', 16219), ('service', 'sql-server-2008-r2', 11271), ('service', 'windows-services', 8342)]"
+set(),0.0,0.0,"['gcc', 'pip', 'cmd', 'resolve', 'install']",{'python'},"[('gcc', 'gcc', 34462), ('pip', 'pip', 14754), ('pip', 'pipe', 8023), ('cmd', 'cmd', 21828), ('install', 'installation', 25594)]"
+set(),0.0,0.0,"['qty', 'eah', 'itemrow', 'totalforone', 'price']","{'jquery', 'javascript'}",[]
+"{('plotly-dash', 'dash')}",0.2,0.5,"['frame', 'download', 'selection', 'put']",{'python'},"[('download', 'download', 16067), ('selection', 'select', 34913), ('selection', 'css-selectors', 11839), ('selection', 'jquery-selectors', 8480)]"
+"{('gson', 'gson')}",0.2,0.2,"['alternate', 'serialize', 'forward', 'scope']","{'spring', 'java', 'json', 'serialization'}","[('serialize', 'serialization', 28772), ('serialize', 'serial-port', 10199), ('scope', 'scope', 15446), ('scope', 'angularjs-scope', 8928)]"
+set(),0.0,0.0,"['kt', 'kapt', 'mixersimplefragmentbindingimpl', 'bindingadapters', 'mixer']","{'kotlin', 'android', 'data-binding'}",[]
+"{('binary-tree', 'tree'), ('recursion', 'recursion')}",0.4,0.5,"['branch', 'root', 'implementation']","{'python', 'longest-path'}",[]
+set(),0.0,0.0,"['injection', 'aobj', 'counstruct', 'refactory', 'b']","{'php', 'class', 'factory', 'oop', 'nrefactory'}","[('injection', 'dependency-injection', 21616)]"
+set(),0.0,0.0,"['photo', 'createdat', 'engineer', 'partition', 'desc']","{'database-design', 'postgresql', 'database', 'mysql'}","[('engineer', 'google-app-engine', 44928)]"
+set(),0.0,0.0,"['brunch', 'statement', 'branch', 'hoping', 'maintain']",{'php'},"[('statement', 'if-statement', 47505), ('statement', 'static', 14585), ('statement', 'statistics', 12410), ('statement', 'switch-statement', 9760), ('statement', 'conditional-statements', 7795)]"
+"{('edi', 'edi')}",0.2,0.2,"['edifact', 'smooks', 'ansi', 'edireader']","{'java-ee-6', 'java', 'java-ee-5', 'jakarta-ee'}",[]
+"{('typescript', 'typescript')}",0.2,0.3333333333333333,"['target', 'react', 'fix', 'e']","{'components', 'reactjs'}","[('react', 'react-native', 77720), ('react', 'react-redux', 15139), ('react', 'react-router', 13023), ('react', 'react-hooks', 7148)]"
+set(),0.0,0.0,"['attribute', 'admin', 'xml', 'tab', 'template']","{'hybris', 'sap'}","[('attribute', 'attributes', 11063), ('admin', 'django-admin', 8501), ('xml', 'xml', 194101), ('xml', 'xml-parsing', 12501), ('tab', 'tabs', 13049), ('template', 'templates', 46777), ('template', 'django-templates', 13896)]"
+set(),0.0,0.0,"['expansion', 'tile', 'expansiontile', 'expansionpanellist', 'expansionpanel']","{'flutter', 'android'}",[]
+set(),0.0,0.0,"['cat', 'collection', 'database', 'show', 'code']","{'node.js', 'mongoose'}","[('collection', 'collections', 21119), ('collection', 'garbage-collection', 10869), ('database', 'database', 168899), ('database', 'firebase-realtime-database', 31539), ('database', 'database-design', 22196), ('database', 'azure-sql-database', 7020), ('code', 'visual-studio-code', 24324), ('code', 'ef-code-first', 8203), ('code', 'coding-style', 7531)]"
+set(),0.0,0.0,"['freebie', 'pg', 'category', 'rewrite', 'group']","{'url-rewriting', '.htaccess', 'pcre', 'formula', 'regex'}","[('rewrite', 'mod-rewrite', 31027), ('rewrite', 'url-rewriting', 15291), ('group', 'group-by', 19697)]"
+set(),0.0,0.0,"['activitythread', 'fe', 'zygoteinit', 'fd', 'egl']","{'runtime', 'c++', 'android', 'java'}",[]
+"{('youtube', 'youtube'), ('analytics', 'analytics')}",0.4,1.0,"['percentage', 'retention', 'audience']",set(),[]
+"{('telegram-bot', 'bot'), ('php-telegram-bot', 'bot')}",0.2,0.6666666666666666,"['sleep', 'language', 'comment', 'someone']",{'php'},"[('language', 'language-agnostic', 8048)]"
+set(),0.0,0.0,"['referral', 'harder', 'improvement', 'concatenate', 'furthermore']","{'django-models', 'django-q', 'django', 'django-3.0', 'django-queryset'}","[('concatenate', 'concatenation', 7006)]"
+"{('output', 'output')}",0.2,0.25,"['excuse', 'convert', 'give', 'list']","{'string', 'python-3.7', 'csv'}","[('convert', 'type-conversion', 10945), ('list', 'list', 102777), ('list', 'linked-list', 15899)]"
+"{('django', 'django'), ('django-rest-framework', 'framework'), ('django-models', 'django'), ('django-rest-framework', 'django'), ('django-serializer', 'serializer'), ('django-serializer', 'django')}",0.6,1.0,"['serialiser', 'address']",set(),[]
+"{('seaborn', 'seaborn')}",0.2,0.3333333333333333,"['pairgrid', 'ax', 'plot', 'correlation']","{'python', 'matplotlib'}","[('plot', 'plot', 29394)]"
+"{('calendarview', 'calendarview')}",0.2,0.2,"['material', 'radius', 'selects', 'round']","{'xml', 'frontend', 'android', 'java'}","[('material', 'angular-material', 13193), ('material', 'material-ui', 8042), ('material', 'material-design', 7242), ('selects', 'select', 34913), ('selects', 'css-selectors', 11839), ('selects', 'jquery-selectors', 8480)]"
+"{('dynamics-crm-2013', 'crm'), ('dynamics-crm', 'crm')}",0.2,1.0,"['inspection', 'birthdate', 'strike', 'getattribute']",set(),[]
+set(),0.0,0.0,"['accuracy', 'fluctuating', 'bike', 'prediction', 'classification']","{'python', 'cnn', 'neural-network', 'jupyter-notebook', 'tensorflow'}","[('classification', 'class', 65874), ('classification', 'asp-classic', 11226)]"
+set(),0.0,0.0,"['turbine', 'weather', 'power', 'production', 'forecast']","{'prediction', 'forecasting', 'machine-learning', 'python-3.x'}",[]
+set(),0.0,0.0,"['cellname', 'chart', 'graph', 'mouse', 'selection']","{'jquery', 'javascript', 'chart.js'}","[('chart', 'charts', 22447), ('graph', 'facebook-graph-api', 33969), ('graph', 'graph', 23278), ('graph', 'graphics', 18315), ('selection', 'select', 34913), ('selection', 'css-selectors', 11839), ('selection', 'jquery-selectors', 8480)]"
+"{('histogram', 'histogram')}",0.2,0.2,"['bin', 'subfolders', 'complains', 'pass']","{'numpy', 'python', 'arrays', 'bigdata'}","[('bin', 'binary', 12443)]"
+set(),0.0,0.0,"['intellisense', 'staticresource', 'showsmy', 'resource', 'paste']",{'wpf'},"[('resource', 'resources', 8648)]"
+set(),0.0,0.0,"['tank', 'bullet', 'blits', 'layer', 'axis']","{'python', 'pygame', 'python-3.x'}",[]
+set(),0.0,0.0,"['suggester', 'whitespace', 'character', 'handler', 'configure']",{'solr'},"[('character', 'character-encoding', 13791), ('handler', 'error-handling', 20622), ('handler', 'exception-handling', 14439), ('handler', 'event-handling', 10615), ('configure', 'configuration', 15968)]"
+set(),0.0,0.0,"['marker', 'midpoint', 'lone', 'college', 'orleans']","{'google-maps', 'maps', 'google-maps-markers', 'google-maps-api-3'}",[]
+"{('elasticsearch', 'elasticsearch'), ('kibana', 'kibana')}",0.4,1.0,"['icmp', 'couldnt', 'onlig']",set(),[]
+"{('google-cloud-sql', 'cloud')}",0.2,0.3333333333333333,"['migration', 'env', 'connect', 'mysql']","{'laravel', 'artisan-migrate'}","[('migration', 'migration', 8881), ('connect', 'connection', 8910), ('mysql', 'mysql', 599452)]"
+set(),0.0,0.0,"['zombocom', 'params', 'controller', 'route', 'trouble']","{'ruby-on-rails', 'wicked-gem', 'routes', 'parameter-passing'}","[('controller', 'model-view-controller', 30488), ('controller', 'version-control', 15780), ('controller', 'controller', 14693), ('controller', 'user-controls', 9856), ('controller', 'controls', 7932), ('route', 'routing', 14477), ('route', 'routes', 14370), ('route', 'react-router', 13023), ('route', 'angular-ui-router', 10078)]"
+set(),0.0,0.0,"['div', 'absolute', 'z', 'position', 'id']","{'css', 'primeng', 'html'}","[('position', 'position', 8093), ('id', 'asp.net-identity', 7248)]"
+set(),0.0,0.0,"['foo', 'crud', 'baz', 'gonna', 'middleware']","{'websocket', 'socket.io', 'sockets'}",[]
+"{('dictionary', 'dictionary')}",0.2,0.2,"['merge', 'loop', 'assign', 'task']","{'python', 'mergeddictionaries', 'cpython', 'python-3.x'}","[('merge', 'merge', 19373), ('loop', 'loops', 72951), ('loop', 'for-loop', 51900), ('loop', 'while-loop', 20346), ('task', 'task', 7000)]"
+"{('ghostscript', 'ghostscript')}",0.2,1.0,"['libgs', 'anu', 'dependency', 'difference']",set(),"[('dependency', 'dependency-injection', 21616), ('dependency', 'dependencies', 10254)]"
+set(),0.0,0.0,"['suspend', 'subscription', 'wcs', 'misc', 'suspension']","{'woocommerce-subscriptions', 'php', 'woocommerce', 'wc-subscriptions', 'wordpress'}",[]
+set(),0.0,0.0,"['mock', 'decorator', 'man', 'pass', 'bounty']","{'testing', 'python', 'django-rest-framework', 'django', 'unit-testing'}","[('mock', 'mocking', 12039), ('man', 'memory-management', 24727)]"
+set(),0.0,0.0,"['importance', 'toplevel', 'quotation', 'caveat', 'succession']","{'python', 'multiprocessing', 'python-multiprocessing'}","[('importance', 'import', 20946)]"
+"{('realm', 'realm'), ('javascript', 'javascript'), ('node-addon-api', 'node'), ('node-pre-gyp', 'node'), ('react-native', 'react')}",0.8,1.0,['hope'],set(),[]
+"{('recaptcha', 'recaptcha'), ('recaptcha-v3', 'recaptcha'), ('servlets', 'servlets')}",0.4,1.0,"['servlet', 'codeforgeek', 'privacy']",set(),[]
+"{('bootstrap-multiselect', 'multiselect'), ('bootstrap-multiselect', 'bootstrap')}",0.4,0.5,"['checkboxes', 'davidstutz', 'dropdown']",{'html'},[]
+set(),0.0,0.0,"['pyqt', 'tableview', 'tabelview', 'progress', 'signal']","{'qtableview', 'python', 'pyqt5', 'qt'}","[('pyqt', 'pyqt', 14099), ('pyqt', 'pyqt5', 9235), ('tableview', 'tableview', 7224)]"
+set(),0.0,0.0,"['width', 'card', 'emilius', 'mfuruki', 'marginfromtheside']","{'react-native', 'react-native-flatlist'}",[]
+set(),0.0,0.0,"['iterator', 'invalidaiton', 'iterators', 'variant', 'hood']",{'c++'},"[('iterator', 'iterator', 12049), ('variant', 'variables', 45896), ('variant', 'environment-variables', 9214), ('variant', 'global-variables', 7370)]"
+set(),0.0,0.0,"['medium', 'folder', 'source', 'view', 'link']","{'node.js', 'express', 'ejs'}","[('medium', 'media-queries', 6873), ('view', 'model-view-controller', 30488), ('view', 'view', 19275), ('view', 'django-views', 14479), ('link', 'linked-list', 15899)]"
+set(),0.0,0.0,"['flip', 'delay', 'card', 'froggy', 'animation']","{'css-position', 'absolute', 'css', 'html'}","[('animation', 'animation', 38762)]"
+"{('random-forest', 'random')}",0.2,0.5,"['spam', 'classifier', 'email', 'algorithm']",{'machine-learning'},"[('classifier', 'class', 65874), ('classifier', 'asp-classic', 11226), ('email', 'email', 53216), ('algorithm', 'algorithm', 100394)]"
+set(),0.0,0.0,"['indentation', 'discard', 'filter', 'non', 'column']","{'plot', 'filtering', 'matplotlib', 'select', 'multiple-columns'}","[('filter', 'filter', 23252)]"
+"{('json', 'json')}",0.2,0.5,"['iterate', 'table', 'print', 'j']",{'javascript'},"[('iterate', 'iteration', 8288), ('table', 'html-table', 20000), ('print', 'printing', 20274)]"
+set(),0.0,0.0,"['avg', 'refers', 'reproducible', 'topic', 'min']",{'java'},"[('refers', 'reference', 14841)]"
+"{('xml', 'xml'), ('mysql', 'mysql')}",0.4,1.0,"['food', 'behaves', 'construct']",set(),"[('construct', 'constructor', 17988), ('construct', 'compiler-construction', 10870)]"
+set(),0.0,0.0,"['protectedroute', 'auth', 'outcome', 'failure', 'router']",{'reactjs'},"[('router', 'routing', 14477), ('router', 'routes', 14370), ('router', 'react-router', 13023), ('router', 'angular-ui-router', 10078)]"
+set(),0.0,0.0,"['bus', 'processor', 'vol', 'microarchitecture', 'moreover']","{'memory-model', 'x86', 'cpu-architecture', 'multiprocessing', 'performance'}","[('processor', 'image-processing', 35385), ('processor', 'parallel-processing', 17072), ('processor', 'process', 16204)]"
+set(),0.0,0.0,"['specie', 'coef', 'slope', 'mx', 'grep']","{'dplyr', 'arrays', 'r', 'dataframe'}","[('grep', 'grep', 14669)]"
+"{('algorithm', 'algorithm')}",0.2,0.2,"['carddistribution', 'guy', 'beginner', 'book']","{'kotlin', 'java', 'refactoring', 'oop'}",[]
+"{('fastreport', 'fastreport')}",0.2,1.0,"['delphi', 'getit', 'bpl', 'enterprise']",set(),"[('delphi', 'delphi', 45963)]"
+"{('singleton', 'singleton')}",0.2,0.3333333333333333,"['erros', 'sharedpreference', 'injector', 'reality']","{'kotlin', 'android'}","[('injector', 'dependency-injection', 21616)]"
+set(),0.0,0.0,"['flex', 'guru', 'restructuring', 'ditch', 'footer']","{'responsive', 'css', 'html'}","[('flex', 'apache-flex', 24150)]"
+set(),0.0,0.0,"['practise', 'episode', 'scrape', 'trial', 'offer']","{'python', 'beautifulsoup', 'python-requests'}",[]
+set(),0.0,0.0,"['checker', 'heyo', 'diagnosis', 'progress', 'headache']","{'vim', 'gcc', 'editor', 'c', 'syntastic'}",[]
+"{('pmd', 'pmd')}",0.2,0.3333333333333333,"['rulesets', 'child', 'hub', 'pom']","{'maven', 'java'}",[]
+"{('jlabel', 'jlabel'), ('thread-safety', 'thread')}",0.4,0.4,"['gui', 'connection', 'worker']","{'multithreading', 'java', 'swing'}","[('connection', 'connection', 8910)]"
+set(),0.0,0.0,"['timedeltas', 'datetimes', 'minute', 'ideal', 'frame']","{'pandas-groupby', 'pandas'}","[('ideal', 'asp.net-identity', 7248)]"
+set(),0.0,0.0,"['separator', 'glue', 'accepts', 'spread', 'argument']","{'function', 'javascript'}","[('argument', 'arguments', 9140)]"
+set(),0.0,0.0,"['prop', 'defaultprops', 'babel', 'lifecycle', 'facebook']","{'ecmascript-6', 'reactjs'}","[('facebook', 'facebook', 84554), ('facebook', 'facebook-graph-api', 33969)]"
+set(),0.0,0.0,"['enables', 'uncomment', 'worker', 'script', 'service']","{'ionic3', 'ionic2', 'ionic-native', 'ionic-framework'}","[('script', 'google-apps-script', 32468), ('service', 'sql-server', 286894), ('service', 'amazon-web-services', 95827), ('service', 'web-services', 59734), ('service', 'sql-server-2008', 53538), ('service', 'reporting-services', 23313), ('service', 'service', 21299), ('service', 'server', 19725), ('service', 'sql-server-2005', 18402), ('service', 'sql-server-2012', 16219), ('service', 'sql-server-2008-r2', 11271), ('service', 'windows-services', 8342)]"
+set(),0.0,0.0,"['settingsframe', 'entry', 'structure', 'com', 'line']","{'tkinter', 'python'}","[('com', 'com', 11439), ('line', 'command-line', 20715), ('line', 'command-line-interface', 6837)]"
+set(),0.0,0.0,"['dio', 'pump', 'ad', 'bmcm', 'messysteme']","{'c++', 'c', 'io', 'bitmask'}",[]
+set(),0.0,0.0,"['death', 'myreviews', 'subpage', 'book', 'nut']","{'flask', 'dynamic', 'routes', 'html'}",[]
+set(),0.0,0.0,"['zsh', 'terminal', 'shell', 'account', 'studio']","{'c++', 'macos'}","[('terminal', 'terminal', 18754), ('shell', 'shell', 77555), ('studio', 'visual-studio', 96222), ('studio', 'android-studio', 67860), ('studio', 'visual-studio-2010', 46892), ('studio', 'visual-studio-code', 24324), ('studio', 'visual-studio-2012', 23126), ('studio', 'visual-studio-2015', 19567), ('studio', 'visual-studio-2013', 18850), ('studio', 'visual-studio-2008', 15726), ('studio', 'visual-studio-2017', 12410)]"
+set(),0.0,0.0,"['png', 'assertion', 'arg', 'src', 'loop']","{'argparse', 'python'}","[('loop', 'loops', 72951), ('loop', 'for-loop', 51900), ('loop', 'while-loop', 20346)]"
+set(),0.0,0.0,"['grpc', 'cnn', 'network', 'net', 'integrate']","{'rest', 'c#', 'python', '.net', 'tensorflow'}","[('network', 'networking', 32775), ('network', 'neural-network', 16205), ('network', 'network-programming', 10247), ('net', '.net', 297732), ('net', '.net-core', 25816), ('net', '.net-4.0', 8746), ('integrate', 'continuous-integration', 10668)]"
+"{('kotlin-coroutines-flow', 'flow'), ('kotlin-flow', 'flow')}",0.2,0.5,"['notify', 'emit', 'callback', 'cancel']","{'kotlin-coroutines', 'android'}","[('notify', 'push-notification', 16753), ('notify', 'notifications', 14200), ('notify', 'apple-push-notifications', 7384), ('callback', 'callback', 15664)]"
+set(),0.0,0.0,"['backbutton', 'login', 'home', 'page', 'browser']","{'django', 'django-models', 'django-rest-framework'}","[('login', 'login', 18542), ('browser', 'browser', 23531), ('browser', 'cross-browser', 8735)]"
+set(),0.0,0.0,"['dump', 'memory', 'machine', 'section', 'target']","{'coredump', 'gdb'}","[('memory', 'memory', 30978), ('memory', 'memory-management', 24727), ('memory', 'memory-leaks', 17962), ('memory', 'out-of-memory', 7059), ('machine', 'machine-learning', 40734)]"
+"{('promise', 'promise')}",0.2,0.3333333333333333,"['seat', 'await', 'foreach', 'syntax']","{'firebase', 'javascript'}","[('await', 'async-await', 16431), ('foreach', 'foreach', 21528), ('syntax', 'syntax', 18623), ('syntax', 'syntax-error', 7634)]"
+"{('gpu', 'gpu')}",0.2,0.2,"['colab', 'tpot', 'sklearn', 'train']","{'h2o4gpu', 'python', 'scikit-learn', 'google-colaboratory'}",[]
+set(),0.0,0.0,"['buffer', 'calculation', 'hand', 'copy', 'memory']",{'rust'},"[('copy', 'copy', 9541), ('memory', 'memory', 30978), ('memory', 'memory-management', 24727), ('memory', 'memory-leaks', 17962), ('memory', 'out-of-memory', 7059)]"
+set(),0.0,0.0,"['whitespaces', 'ifs', 'newlines', 'filename', 'exists']","{'bash', 'scripting'}",[]
+set(),0.0,0.0,"['ptr', 'leak', 'scott', 'meyers', 'cplusplus']","{'memory-leaks', 'c++11', 'smart-pointers', 'make-shared'}","[('leak', 'memory-leaks', 17962)]"
+set(),0.0,0.0,"['chain', 'protectioncommandservice', 'subscribe', 'breaking', 'factory']","{'reactive-programming', 'java', 'spring-webflux', 'project-reactor'}",[]
+"{('opencv', 'opencv'), ('orientation', 'orientation'), ('depth', 'depth')}",0.6,0.75,"['albedo', 'color']",{'python'},"[('color', 'colors', 18031)]"
+"{('dataframe', 'dataframe')}",0.2,0.2,"['country', 'column', 'panda', 'min']","{'pandas', 'jupyter-notebook', 'python', 'numpy'}",[]
+"{('hapi-fhir', 'hapi')}",0.2,0.5,"['practitioner', 'patient', 'pracid', 'intellij']",{'java'},"[('intellij', 'intellij-idea', 34568)]"
+"{('cmake', 'cmake')}",0.2,0.5,"['integration', 'explicity', 'fixture', 'enables']",{'ctest'},"[('integration', 'continuous-integration', 10668)]"
+set(),0.0,0.0,"['brt', 'zone', 'abbreviation', 'eet', 'recognise']","{'php', 'datetime', 'php-carbon'}",[]
+set(),0.0,0.0,"['sock', 'wear', 'humanchild', 'childsock', 'worn']","{'inheritance', 'overriding', 'scala'}",[]
+"{('webpack', 'webpack')}",0.2,0.3333333333333333,"['handlebar', 'responsibility', 'plugins', 'translates']","{'node.js', 'javascript'}","[('plugins', 'plugins', 22758), ('plugins', 'jquery-plugins', 13049)]"
+set(),0.0,0.0,"['finance', 'income', 'indentation', 'sale', 'invokes']",{'python'},[]
+"{('agent', 'agent')}",0.2,0.25,"['listens', 'pubsub', 'connects', 'determines']","{'node.js', 'local', 'sockets'}","[('listens', 'list', 102777), ('listens', 'linked-list', 15899), ('connects', 'connection', 8910)]"
+set(),0.0,0.0,"['distance', 'storesarray', 'paginator', 'store', 'step']","{'php', 'arrays', 'laravel'}","[('store', 'stored-procedures', 32918), ('store', 'local-storage', 7518), ('store', 'google-cloud-storage', 7336), ('store', 'app-store', 7244), ('store', 'windows-store-apps', 6929)]"
+set(),0.0,0.0,"['blade', 'registercontroller', 'formrequests', 'outwards', 'validation']","{'php', 'laravel-6', 'try-catch', 'laravel', 'exception'}","[('validation', 'validation', 59780)]"
+set(),0.0,0.0,"['cart', 'jsp', 'eda', 'cebf', 'bbe']","{'spring-mvc', 'spring-restcontroller', 'angularjs'}","[('jsp', 'jsp', 51004)]"
+set(),0.0,0.0,"['queue', 'doctor', 'thoes', 'patient', 'statments']","{'mysql', 'sql'}","[('queue', 'queue', 9241)]"
+"{('filter', 'filter')}",0.2,0.2,"['criterion', 'range', 'difficulty', 'till']","{'criteria', 'excel', 'vba', 'inputbox'}","[('range', 'range', 8349)]"
+"{('angularjs', 'angularjs')}",0.2,0.25,"['csv', 'success', 'structure', 'someone']","{'arrays', 'datatable', 'html'}","[('csv', 'csv', 70389)]"
+set(),0.0,0.0,"['spinner', 'presnt', 'selctor', 'loader', 'retrieval']","{'css', 'beautifulsoup', 'html'}",[]
+"{('paraview', 'paraview'), ('vtk', 'vtk')}",0.4,0.5,"['vtu', 'subroutine', 'vtkxmlunstructureddatareader']","{'fortran', 'binary'}",[]
+"{('kibana', 'kibana')}",0.2,0.3333333333333333,"['num', 'size', 'suggestion', 'max']","{'elasticsearch', 'devtools'}","[('max', 'max', 7081)]"
+set(),0.0,0.0,"['terminates', 'headless', 'pi', 'program', 'restart']","{'python', 'linux', 'reboot'}","[('terminates', 'terminal', 18754), ('pi', 'raspberry-pi', 13599), ('program', 'functional-programming', 15854), ('program', 'network-programming', 10247)]"
+set(),0.0,0.0,"['const', 'omit', 'keyword', 'declaration', 'declare']",{'flutter'},[]
+"{('blazor', 'blazor'), ('blazor-server-side', 'blazor'), ('razor', 'razor')}",0.4,0.6,"['additionalassemblies', 'routings', 'coolbots']","{'.net-core-3.0', 'c#'}","[('routings', 'routing', 14477), ('routings', 'routes', 14370), ('routings', 'react-router', 13023), ('routings', 'angular-ui-router', 10078)]"
+"{('apache-kafka-connect', 'kafka'), ('confluent-platform', 'confluent'), ('confluent', 'confluent'), ('apache-kafka', 'kafka')}",0.4,1.0,"['inter', 'connector', 'maven']",set(),"[('inter', 'android-intent', 29370), ('connector', 'connection', 8910), ('maven', 'maven', 74266)]"
+"{('axios', 'axios')}",0.2,0.5,"['encode', 'decode', 'vue', 'append']",{'vue.js'},"[('encode', 'encoding', 21410), ('encode', 'character-encoding', 13791), ('append', 'append', 8816)]"
+set(),0.0,0.0,"['surname', 'assignation', 'null', 'fetch', 'pop']",{'javascript'},"[('null', 'null', 13762), ('fetch', 'fetch', 7140)]"
+set(),0.0,0.0,"['httppost', 'peeyshapps', 'epizy', 'sign', 'mainactivity']","{'php', 'httpclient', 'android', 'java', 'mysql'}",[]
+set(),0.0,0.0,"['rubberduck', 'prohibit', 'bulletproof', 'destroy', 'immediate']","{'macos', 'class', 'vba', 'office365'}",[]
+"{('swift', 'swift')}",0.2,0.3333333333333333,"['fruit', 'group', 'layout', 'collection']","{'uicollectionview', 'uicollectionviewcompositionallayout'}","[('group', 'group-by', 19697), ('layout', 'android-layout', 55293), ('layout', 'layout', 24492), ('collection', 'collections', 21119), ('collection', 'garbage-collection', 10869)]"
+set(),0.0,0.0,"['insertbstnode', 'treenode', 'pointer', 'requirement', 'studio']","{'binary-search-tree', 'c++', 'data-structures'}","[('pointer', 'pointers', 47462), ('pointer', 'floating-point', 12443), ('studio', 'visual-studio', 96222), ('studio', 'android-studio', 67860), ('studio', 'visual-studio-2010', 46892), ('studio', 'visual-studio-code', 24324), ('studio', 'visual-studio-2012', 23126), ('studio', 'visual-studio-2015', 19567), ('studio', 'visual-studio-2013', 18850), ('studio', 'visual-studio-2008', 15726), ('studio', 'visual-studio-2017', 12410)]"
+set(),0.0,0.0,"['dhananjay', 'rtb', 'codesandbox', 'city', 'sub']","{'react-native', 'react-hooks', 'reactjs', 'react-redux', 'react-hook-form'}",[]
+set(),0.0,0.0,"['dropdowns', 'oninit', 'everything', 'form', 'option']","{'angular', 'javascript'}","[('form', 'forms', 101851), ('form', 'django-forms', 15270), ('form', 'format', 10268)]"
+"{('freertos', 'freertos')}",0.2,0.5,"['exe', 'exit', 'status', 'studio']",{'embedded'},"[('status', 'if-statement', 47505), ('status', 'static', 14585), ('status', 'statistics', 12410), ('status', 'switch-statement', 9760), ('status', 'conditional-statements', 7795), ('studio', 'visual-studio', 96222), ('studio', 'android-studio', 67860), ('studio', 'visual-studio-2010', 46892), ('studio', 'visual-studio-code', 24324), ('studio', 'visual-studio-2012', 23126), ('studio', 'visual-studio-2015', 19567), ('studio', 'visual-studio-2013', 18850), ('studio', 'visual-studio-2008', 15726), ('studio', 'visual-studio-2017', 12410)]"
+"{('laravel-eloquent', 'eloquent')}",0.2,0.2,"['mode', 'matt', 'stauffer', 'pena']","{'php', 'laravel-5', 'laravel-5.3', 'mysql'}","[('mode', 'mod-rewrite', 31027), ('mode', 'module', 18146), ('mode', 'modal-dialog', 10356), ('matt', 'angular-material', 13193), ('matt', 'material-ui', 8042), ('matt', 'material-design', 7242)]"
+set(),0.0,0.0,"['indexer', 'indexing', 'boolean', 'ilocation', 'series']","{'pandas', 'python'}","[('indexer', 'indexing', 27463), ('indexing', 'indexing', 27463), ('boolean', 'boolean', 9500), ('series', 'time-series', 10386)]"
+set(),0.0,0.0,"['liberty', 'group', 'day', 'regression', 'ml']","{'pandas', 'python'}","[('group', 'group-by', 19697)]"
+set(),0.0,0.0,"['sulpher', 'zzz', 'term', 'xxx', 'document']","{'lucene', 'elasticsearch'}",[]
+set(),0.0,0.0,"['ownerdraw', 'owner', 'drawn', 'bitmap', 'ctlcolorbtn']","{'winapi', 'c++', 'user-interface'}","[('bitmap', 'bitmap', 14926)]"
+"{('webgl', 'webgl')}",0.2,1.0,"['matrix', 'matsuda', 'lea', 'gold']",set(),"[('matrix', 'matrix', 33777)]"
+set(),0.0,0.0,"['delegate', 'homeviewcontroller', 'protocol', 'self', 'menu']","{'delegates', 'protocols', 'swift'}","[('delegate', 'delegates', 10541), ('menu', 'drop-down-menu', 19860), ('menu', 'menu', 14578)]"
+set(),0.0,0.0,"['widget', 'gridview', 'ith', 'disappears', 'hey']","{'flutter', 'dart'}","[('widget', 'widget', 9338), ('gridview', 'gridview', 25919)]"
+set(),0.0,0.0,"['createcharacter', 'race', 'sheet', 'character', 'retrieve']","{'constructor', 'instantiation', 'c#', 'class', 'parameter-passing'}","[('sheet', 'google-sheets', 27331), ('character', 'character-encoding', 13791)]"
+set(),0.0,0.0,"['nan', 'csv', 'dataframe', 'panda', 'symbol']","{'pandas', 'python'}","[('csv', 'csv', 70389), ('dataframe', 'dataframe', 70923)]"
+set(),0.0,0.0,"['dealer', 'component', 'navigation', 'prop', 'menu']","{'react-props', 'react-router', 'reactjs'}","[('component', 'components', 8590), ('navigation', 'navigation', 11880), ('menu', 'drop-down-menu', 19860), ('menu', 'menu', 14578)]"
+set(),0.0,0.0,"['pom', 'jenkins', 'khmarbaise', 'artifactid', 'ponson']",{'maven'},"[('jenkins', 'jenkins', 41020), ('jenkins', 'jenkins-pipeline', 8549)]"
+set(),0.0,0.0,"['destination', 'chart', 'expert', 'flow', 'network']","{'sankey-diagram', 'd3.js', 'angularjs'}","[('chart', 'charts', 22447), ('network', 'networking', 32775), ('network', 'neural-network', 16205), ('network', 'network-programming', 10247)]"
+"{('elasticsearch', 'elasticsearch')}",0.2,1.0,"['robo', 'sqldeveloper', 'solr', 'crud']",set(),"[('solr', 'solr', 19162)]"
+"{('amazon-dynamodb-local', 'dynamodb'), ('aws-java-sdk-dynamodb', 'dynamodb'), ('aws-java-sdk-dynamodb', 'aws'), ('amazon-dynamodb', 'dynamodb')}",0.4,0.6,"['lock', 'partition', 'die']","{'amazon-web-services', 'java'}","[('lock', 'locking', 7782)]"
+"{('mysqli', 'mysqli')}",0.2,0.5,"['hostgator', 'mysqlnd', 'stmt', 'hostagtor']",{'php'},[]
+set(),0.0,0.0,"['jcusolver', 'sigsegv', 'calculation', 'instruction', 'fails']",{'cuda'},[]
+"{('redundancy', 'redundancy'), ('rda', 'rda')}",0.4,0.6666666666666666,"['soil', 'association', 'site']",{'r'},[]
+"{('blazor-client-side', 'client'), ('blazor-client-side', 'side')}",0.4,0.3333333333333333,"['getallusers', 'pagination', 'reference']","{'blazor', 'asp.net-core'}","[('pagination', 'pagination', 14928), ('reference', 'reference', 14841)]"
+set(),0.0,0.0,"['article', 'loop', 'series', 'retrieve', 'moment']","{'firebase', 'firebase-realtime-database', 'javascript'}","[('loop', 'loops', 72951), ('loop', 'for-loop', 51900), ('loop', 'while-loop', 20346), ('series', 'time-series', 10386)]"
+set(),0.0,0.0,"['propreties', 'whozcraig', 'replacement', 'ex', 'print']","{'c++', 'c++-cli', 'windows'}","[('replacement', 'replace', 22898), ('print', 'printing', 20274)]"
+set(),0.0,0.0,"['gitlab', 'chapter', 'bookmark', 'construction', 'cpp']","{'c++', 'move', 'boost-asio', 'asio', 'move-semantics'}","[('gitlab', 'gitlab', 9651), ('construction', 'constructor', 17988), ('construction', 'compiler-construction', 10870)]"
+set(),0.0,0.0,"['year', 'tue', 'month', 'datetimeparseexception', 'localdate']",{'java'},[]
+"{('aspect-ratio', 'ratio'), ('aspect-ratio', 'aspect')}",0.4,0.2,"['constraint', 'contraints', 'inspector']","{'xcode', 'ios', 'nslayoutconstraint', 'uistoryboard'}","[('constraint', 'constraints', 7364)]"
+set(),0.0,0.0,"['logo', 'fileadmin', 'introduction', 'svg', 'switch']","{'typo3', 'typo3-9.x'}","[('svg', 'svg', 35455), ('switch', 'switch-statement', 9760)]"
+set(),0.0,0.0,"['duration', 'reducer', 'delay', 'item', 'animation']","{'react-transition-group', 'javascript', 'css-transitions', 'reactjs'}","[('animation', 'animation', 38762)]"
+set(),0.0,0.0,"['masonry', 'codesandbox', 'gallery', 'span', 'trouble']","{'grid', 'css', 'reactjs'}",[]
+"{('flurl', 'flurl')}",0.2,0.25,"['joplin', 'asar', 'pptx', 'clipperserver']","{'rest', 'multipart', 'c#'}",[]
+"{('keras-rl', 'rl')}",0.2,0.2,"['tf', 'gym', 'dql', 'openai']","{'python', 'keras', 'reinforcement-learning', 'tensorflow'}",[]
+set(),0.0,0.0,"['abstractnormalizer', 'catalog', 'school', 'online', 'src']","{'collections', 'symfony', 'review'}",[]
+"{('wxwidgets', 'wxwidgets')}",0.2,0.3333333333333333,"['cpp', 'json', 'launch', 'library']","{'c++', 'visual-studio-code'}","[('json', 'json', 293951)]"
+set(),0.0,0.0,"['compress', 'zetbaitsu', 'compressor', 'gallery', 'kotlin']","{'android', 'java', 'image-compression'}","[('compress', 'compression', 7984), ('compressor', 'compression', 7984), ('kotlin', 'kotlin', 41607)]"
+"{('google-cloud-firestore', 'firestore')}",0.2,0.2,"['ktx', 'singup', 'passwprd', 'auth']","{'firebase', 'kotlin', 'android', 'firebase-authentication'}",[]
+"{('try-catch', 'catch')}",0.2,0.25,"['promise', 'dup', 'await', 'callback']","{'node.js', 'error-handling', 'mysql'}","[('promise', 'promise', 17640), ('await', 'async-await', 16431), ('callback', 'callback', 15664)]"
+"{('serialversionuid', 'serialversionuid'), ('proguard', 'proguard')}",0.4,0.4,"['deserializer', 'invalidclassexception', 'classdesc']","{'android', 'java', 'deserialization'}",[]
+"{('plsql', 'plsql')}",0.2,0.25,"['confirmation', 'systdate', 'unsure', 'job']","{'oracle', 'oracle12c', 'sql'}",[]
+"{('mongodb', 'mongodb')}",0.2,0.25,"['rajamanii', 'fcd', 'nodejs', 'runtime']","{'database-connection', 'node.js', 'database'}","[('nodejs', 'node.js', 333848), ('runtime', 'windows-runtime', 8438), ('runtime', 'runtime-error', 7605), ('runtime', 'runtime', 6852)]"
+set(),0.0,0.0,"['pycharm', 'snippet', 'window', 'error', 'code']","{'pandas', 'python', 'dataframe', 'python-3.x'}","[('pycharm', 'pycharm', 11475), ('window', 'windows', 141732), ('window', 'windows-phone-7', 19778), ('window', 'windows-phone-8', 18350), ('window', 'windows-7', 10977), ('window', 'windows-8', 10343), ('window', 'windows-10', 10174), ('window', 'windows-runtime', 8438), ('window', 'windows-services', 8342), ('window', 'window', 8231), ('window', 'windows-installer', 7972), ('window', 'windows-phone-8.1', 7731), ('window', 'windows-store-apps', 6929), ('error', 'error-handling', 20622), ('error', 'compiler-errors', 16373), ('error', 'syntax-error', 7634), ('error', 'runtime-error', 7605), ('code', 'visual-studio-code', 24324), ('code', 'ef-code-first', 8203), ('code', 'coding-style', 7531)]"
+set(),0.0,0.0,"['msg', 'series', 'environment', 'x', 'quite']","{'shiny', 'r'}","[('series', 'time-series', 10386), ('environment', 'environment-variables', 9214), ('x', 'python-3.x', 235152), ('x', 'x86', 13449)]"
+"{('svelte-3', 'svelte'), ('svelte', 'svelte')}",0.2,0.5,"['attemt', 'honest', 'webpack', 'doubt']","{'rollup', 'rollupjs'}","[('webpack', 'webpack', 31832)]"
+set(),0.0,0.0,"['excelsheet', 'append', 'frame', 'sheet', 'merge']","{'pandas', 'excel', 'dataframe', 'python-3.x', 'python'}","[('append', 'append', 8816), ('sheet', 'google-sheets', 27331), ('merge', 'merge', 19373)]"
+set(),0.0,0.0,"['mohammad', 'toggle', 'checkout', 'selection', 'button']","{'flutter', 'dart'}","[('selection', 'select', 34913), ('selection', 'css-selectors', 11839), ('selection', 'jquery-selectors', 8480), ('button', 'button', 34419), ('button', 'radio-button', 9355)]"
+set(),0.0,0.0,"['readme', 'video', 'mp', 'md', 'generator']","{'markdown', 'github'}","[('video', 'video', 30461), ('video', 'video-streaming', 7302), ('generator', 'generics', 41184)]"
+"{('swing', 'swing')}",0.2,0.5,"['edt', 'invokelater', 'paint', 'thread']",{'java'},"[('thread', 'thread-safety', 8226)]"
+"{('keycloak', 'keycloak')}",0.2,0.3333333333333333,"['keycloakwebsecurityconfigureradapter', 'httpsecurity', 'authenticationmanager', 'jwttokenauthenticationfilter']","{'spring-security', 'spring-boot'}",[]
+set(),0.0,0.0,"['recalculates', 'flexibility', 'heard', 'guessing', 'sheet']","{'excel', 'excel-formula', 'excel-2019', 'offset', 'performance'}","[('flexibility', 'apache-flex', 24150), ('sheet', 'google-sheets', 27331)]"
+set(),0.0,0.0,"['hpack', 'freak', 'flag', 'sense', 'override']","{'build', 'ghc', 'cabal', 'haskell-stack', 'linker'}","[('override', 'overriding', 7183)]"
+set(),0.0,0.0,"['community', 'anybody', 'net', 'core', 'f']","{'visual-studio-2019', 'f#', 'visual-studio'}","[('net', '.net', 297732), ('net', '.net-core', 25816), ('net', '.net-4.0', 8746), ('core', 'asp.net-core', 47211), ('core', 'core-data', 27060), ('core', '.net-core', 25816), ('core', 'entity-framework-core', 10762), ('core', 'asp.net-core-mvc', 10037), ('f', 'f#', 14785)]"
+"{('legend', 'legend')}",0.2,0.5,"['dot', 'regplot', 'scatter', 'plot']",{'seaborn'},"[('plot', 'plot', 29394)]"
+set(),0.0,0.0,"['validate', 'serializer', 'drf', 'validators', 'sketch']","{'django', 'validation', 'django-rest-framework'}","[('validate', 'validation', 59780)]"
+"{('mongodb', 'mongodb')}",0.2,0.3333333333333333,"['csv', 'mongo', 'conversion', 'guy']","{'pymongo-3.x', 'python-3.x'}","[('csv', 'csv', 70389), ('conversion', 'type-conversion', 10945)]"
+set(),0.0,0.0,"['recognition', 'mountain', 'teeth', 'contrast', 'smooth']","{'python', 'python-tesseract'}",[]
+set(),0.0,0.0,"['shuffle', 'iterate', 'quiz', 'duplicate', 'translation']","{'random', 'python', 'duplicates'}","[('iterate', 'iteration', 8288), ('duplicate', 'duplicates', 11409)]"
+"{('razor-pages', 'razor')}",0.2,0.25,"['suck', 'asp', 'href', 'imagine']","{'asp.net-core', '.net-core', 'c#'}","[('asp', 'asp-classic', 11226)]"
+set(),0.0,0.0,"['speller', 'pset', 'compiles', 'amount', 'trouble']","{'c', 'cs50'}","[('compiles', 'compiler-errors', 16373), ('compiles', 'compilation', 14954), ('compiles', 'compiler-construction', 10870)]"
+set(),0.0,0.0,"['spot', 'hook', 'render', 'style', 'cause']","{'ref', 'react-select', 'styled-components', 'reactjs'}","[('hook', 'react-hooks', 7148), ('style', 'styles', 7847), ('style', 'coding-style', 7531)]"
+"{('emacs', 'emacs')}",0.2,0.25,"['chromium', 'chrubuntu', 'bu', 'stort']","{'browser', 'org-mode', 'google-chrome'}",[]
+"{('html5-canvas', 'canvas'), ('mediarecorder', 'mediarecorder')}",0.4,0.4,"['resolution', 'getdisplaymedia', 'framerate']","{'node.js', 'javascript', 'get-display-media'}",[]
+"{('nginx', 'nginx')}",0.2,0.2,"['ingres', 'dockerfile', 'pod', 'tea']","{'kubernetes', 'ubuntu', 'google-kubernetes-engine', 'docker'}","[('dockerfile', 'dockerfile', 8461)]"
+set(),0.0,0.0,"['fancy', 'trace', 'stack', 'line', 'console']","{'node.js', 'jestjs'}","[('stack', 'stack', 9456), ('line', 'command-line', 20715), ('line', 'command-line-interface', 6837), ('console', 'console', 11848)]"
+set(),0.0,0.0,"['installation', 'transfer', 'procedure', 'bug', 'compiler']",{'c++'},"[('installation', 'installation', 25594), ('procedure', 'stored-procedures', 32918), ('compiler', 'compiler-errors', 16373), ('compiler', 'compilation', 14954), ('compiler', 'compiler-construction', 10870)]"
+set(),0.0,0.0,"['wonder', 'suggestion', 'level', 'script', 'case']","{'r', 'tmap'}","[('script', 'google-apps-script', 32468)]"
+"{('event-listener', 'event'), ('event-handling', 'event')}",0.2,0.4,"['developed', 'consideration', 'span', 'selector']","{'dynamic-html', 'javascript', 'dom-events'}","[('selector', 'select', 34913), ('selector', 'css-selectors', 11839), ('selector', 'jquery-selectors', 8480)]"
+"{('qt', 'qt'), ('cursor', 'cursor')}",0.4,0.4,"['reimplement', 'alwaysoff', 'sizepolicy']","{'hide', 'qlineedit', 'caret'}",[]
+"{('provider', 'provider')}",0.2,0.2,"['price', 'conatain', 'preview', 'var']","{'flutter', 'dart', 'listen', 'screen'}",[]
+"{('firebase-realtime-database', 'firebase')}",0.2,0.3333333333333333,"['timestamp', 'transaction', 'subtract', 'client']","{'kotlin', 'android'}","[('timestamp', 'timestamp', 10745), ('transaction', 'transactions', 14129), ('client', 'client', 7256)]"
+set(),0.0,0.0,"['iterator', 'begin', 'container', 'colon', 'iterators']","{'c++', 'c++11', 'traversal'}","[('iterator', 'iterator', 12049), ('container', 'containers', 7658)]"
+"{('kotlin', 'kotlin')}",0.2,0.3333333333333333,"['notification', 'pop', 'program', 'display']","{'android-notifications', 'android'}","[('notification', 'push-notification', 16753), ('notification', 'notifications', 14200), ('notification', 'apple-push-notifications', 7384), ('program', 'functional-programming', 15854), ('program', 'network-programming', 10247)]"
+set(),0.0,0.0,"['matplotlib', 'omit', 'plot', 'dataframe', 'practice']","{'pandas', 'pivot', 'python', 'openpyxl'}","[('matplotlib', 'matplotlib', 49073), ('plot', 'plot', 29394), ('dataframe', 'dataframe', 70923)]"
+"{('amazon-sagemaker', 'sagemaker')}",0.2,0.25,"['health', 'zappos', 'seomoz', 'po']","{'amazon-s3', 'python', 'amazon-web-services'}",[]
+set(),0.0,0.0,"['searchform', 'productresults', 'arrival', 'outer', 'anybody']","{'react-hooks', 'reactjs'}","[('outer', 'out-of-memory', 7059)]"
+"{('python', 'python')}",0.2,0.3333333333333333,"['figure', 'program', 'click', 'something']","{'tkinter', 'smtplib'}","[('program', 'functional-programming', 15854), ('program', 'network-programming', 10247), ('click', 'click', 8459)]"
+"{('pytorch', 'pytorch')}",0.2,0.2,"['stride', 'convolution', 'matrix', 'existence']","{'python', 'deep-learning', 'conv-neural-network', 'tensorflow'}","[('matrix', 'matrix', 33777)]"
+set(),0.0,0.0,"['millisecond', 'sort', 'selection', 'right', 'look']","{'python', 'algorithm', 'sorting'}","[('sort', 'sorting', 62648), ('selection', 'select', 34913), ('selection', 'css-selectors', 11839), ('selection', 'jquery-selectors', 8480)]"
+"{('argparse', 'argparse')}",0.2,0.2,"['arv', 'recieve', 'pass', 'py']","{'sys', 'arguments', 'python', 'setup.py'}",[]
+"{('rxjs', 'rxjs')}",0.2,0.5,"['delay', 'learnrxjs', 'interval', 'operator']",{'javascript'},"[('operator', 'operating-system', 11093), ('operator', 'operator-overloading', 7236)]"
+set(),0.0,0.0,"['quiz', 'component', 'fiddle', 'prop', 'select']","{'vue.js', 'javascript'}","[('component', 'components', 8590), ('select', 'select', 34913), ('select', 'css-selectors', 11839), ('select', 'jquery-selectors', 8480)]"
+"{('cron-task', 'cron')}",0.2,0.3333333333333333,"['schedule', 'reschedule', 'scheduler', 'persist']","{'node.js', 'scheduled-tasks'}",[]
+"{('symfony-4.4', 'symfony'), ('symfony', 'symfony')}",0.2,0.4,"['webserver', 'authority', 'ssl', 'thesis']","{'symfony5', 'php', 'symfony4'}","[('webserver', 'webserver', 7279), ('authority', 'authentication', 45816), ('authority', 'firebase-authentication', 13400), ('authority', 'authorization', 8078), ('ssl', 'ssl', 42898), ('ssl', 'ssl-certificate', 8198)]"
+"{('websocket', 'websocket')}",0.2,0.5,"['websockets', 'bidi', 'initiate', 'duplex']",{'http2'},"[('initiate', 'in-app-purchase', 8198)]"
+set(),0.0,0.0,"['rifke', 'eymoxgj', 'achieves', 'pagey', 'clienty']","{'image', 'mouseevent', 'html', 'css', 'javascript'}",[]
+set(),0.0,0.0,"['premium', 'ad', 'desc', 'yii', 'sort']","{'php', 'sorting', 'yii2'}","[('yii', 'yii', 16591), ('yii', 'yii2', 14190), ('sort', 'sorting', 62648)]"
+"{('steam', 'steam')}",0.2,0.3333333333333333,"['sandbox', 'shell', 'authorization', 'browser']","{'linux', 'security'}","[('shell', 'shell', 77555), ('authorization', 'authentication', 45816), ('authorization', 'firebase-authentication', 13400), ('authorization', 'authorization', 8078), ('browser', 'browser', 23531), ('browser', 'cross-browser', 8735)]"
+set(),0.0,0.0,"['extension', 'optionality', 'pitfall', 'adopt', 'redundant']","{'swift-extensions', 'ios', 'swift', 'generics'}","[('extension', 'google-chrome-extension', 23387)]"
+set(),0.0,0.0,"['paragraph', 'word', 'semicolon', 'mark', 'hello']","{'excel', 'vba'}","[('word', 'ms-word', 15812)]"
+set(),0.0,0.0,"['shapedarray', 'rungraphexample', 'uint', 'pb', 'rcnn']","{'deeplearning4j', 'nd4j', 'tensorflow'}",[]
+set(),0.0,0.0,"['opt', 'printing', 'food', 'matlab', 'statement']",{'r'},"[('printing', 'printing', 20274), ('matlab', 'matlab', 87912), ('statement', 'if-statement', 47505), ('statement', 'static', 14585), ('statement', 'statistics', 12410), ('statement', 'switch-statement', 9760), ('statement', 'conditional-statements', 7795)]"
+set(),0.0,0.0,"['survey', 'participant', 'coulmns', 'plz', 'yeah']","{'report', 'php', 'api', 'laravel', 'qualtrics'}",[]
+set(),0.0,0.0,"['procedure', 'illustration', 'statement', 'cursor', 'select']","{'oracle', 'plsql', 'sql'}","[('procedure', 'stored-procedures', 32918), ('statement', 'if-statement', 47505), ('statement', 'static', 14585), ('statement', 'statistics', 12410), ('statement', 'switch-statement', 9760), ('statement', 'conditional-statements', 7795), ('cursor', 'cursor', 7850), ('select', 'select', 34913), ('select', 'css-selectors', 11839), ('select', 'jquery-selectors', 8480)]"
+"{('react-native-svg', 'svg'), ('react-native-svg', 'react'), ('react-native', 'react')}",0.4,0.6666666666666666,"['npmjs', 'cache', 'emulator']",{'victory-charts'},"[('cache', 'caching', 33938), ('emulator', 'android-emulator', 10728)]"
+"{('boxplot', 'boxplot')}",0.2,0.3333333333333333,"['origin', 'axis', 'software', 'description']","{'r', 'ggplot2'}",[]
+"{('cryptography', 'cryptography')}",0.2,0.5,"['rsa', 'oaep', 'exchange', 'stack']",{'gmp'},"[('stack', 'stack', 9456)]"
+"{('struct', 'struct')}",0.2,0.5,"['ints', 'rearrange', 'grab', 'char']",{'c'},"[('char', 'char', 11136)]"
+set(),0.0,0.0,"['byte', 'format', 'array', 'bit', 'need']","{'private-key', 'python', 'rsa'}","[('format', 'forms', 101851), ('format', 'django-forms', 15270), ('format', 'format', 10268), ('array', 'arrays', 332778), ('array', 'multidimensional-array', 29595)]"
+set(),0.0,0.0,"['height', 'midplane', 'density', 'distribution', 'age']","{'python', 'slice', 'python-3.x'}",[]
+"{('pygame', 'pygame')}",0.2,0.3333333333333333,"['sdl', 'nda', 'keyboard', 'demonstrate']","{'tkinter', 'python'}","[('keyboard', 'keyboard', 11109)]"
+"{('android-navigation-bar', 'bar'), ('android-navigation-bar', 'navigation')}",0.4,0.3333333333333333,"['transculate', 'hide', 'theme']","{'android-layout', 'android'}","[('theme', 'wordpress-theming', 7816)]"
+set(),0.0,0.0,"['heroku', 'vue', 'bootstrap', 'dependency', 'index']","{'node.js', 'vue.js', 'javascript'}","[('heroku', 'heroku', 35499), ('bootstrap', 'twitter-bootstrap', 98490), ('bootstrap', 'twitter-bootstrap-3', 21187), ('bootstrap', 'bootstrap-4', 20274), ('dependency', 'dependency-injection', 21616), ('dependency', 'dependencies', 10254), ('index', 'indexing', 27463)]"
+"{('abp', 'abp')}",0.2,1.0,"['tenancy', 'multi', 'multitenancyoff', 'multitenancyconsts']",set(),[]
+set(),0.0,0.0,"['upload', 'browse', 'guidance', 'profile', 'picture']",{'php'},"[('upload', 'file-upload', 24865), ('upload', 'upload', 13070), ('browse', 'browser', 23531), ('browse', 'cross-browser', 8735)]"
+"{('uicollectionview', 'uicollectionview')}",0.2,0.25,"['nib', 'customcell', 'uiviewcontroller', 'cell']","{'ios', 'objective-c', 'cocoa-touch'}","[('uiviewcontroller', 'uiviewcontroller', 15880)]"
+"{('increment', 'increment'), ('calculation', 'calculation')}",0.4,0.6666666666666666,"['kg', 'price', 'rate']",{'java'},[]
+set(),0.0,0.0,"['customtab', 'cognito', 'xamarin', 'customurlactivityinterceptor', 'acvitity']","{'xamarin.android', 'android', 'xamarin.auth', 'android-customtabs'}","[('xamarin', 'xamarin', 42120)]"
+"{('lstm', 'lstm')}",0.2,0.25,"['correspond', 'reuters', 'category', 'training']","{'recurrent-neural-network', 'keras', 'machine-learning'}",[]
+"{('keras-rl', 'rl')}",0.2,0.25,"['lstm', 'kera', 'lstms', 'agent']","{'keras', 'tensorflow2.0', 'reinforcement-learning'}",[]
+"{('enums', 'enums')}",0.2,0.3333333333333333,"['enum', 'attribute', 'member', 'duplicate']","{'.net', 'c#'}","[('attribute', 'attributes', 11063), ('duplicate', 'duplicates', 11409)]"
+set(),0.0,0.0,"['enviornment', 'plataforms', 'plataform', 'sdk', 'eclipse']","{'android', 'android-activity'}","[('sdk', 'sdk', 13138), ('eclipse', 'eclipse', 119977), ('eclipse', 'eclipse-plugin', 11195)]"
+"{('android-room', 'room')}",0.2,0.2,"['pojo', 'gson', 'gsonformat', 'bringing']","{'retrofit2', 'android-architecture-components', 'android', 'rest'}","[('gson', 'gson', 8672)]"
+"{('android-recyclerview', 'recyclerview')}",0.2,0.25,"['actionmodecallback', 'onbinviewholder', 'action', 'item']","{'android-layout', 'android', 'recycler-adapter'}","[('action', 'android-activity', 27632), ('action', 'active-directory', 13739), ('action', 'azure-active-directory', 9842)]"
+"{('flask', 'flask')}",0.2,0.3333333333333333,"['liter', 'quart', 'patience', 'pint']","{'python', 'html'}",[]
+set(),0.0,0.0,"['deal', 'feature', 'string', 'number', 'lass']",{'python'},"[('string', 'string', 153571), ('number', 'numbers', 10129)]"
+"{('sqlalchemy', 'sqlalchemy')}",0.2,0.25,"['insert', 'schema', 'cluster', 'engine']","{'pandas', 'python', 'jaydebeapi'}","[('insert', 'insert', 13108), ('engine', 'google-app-engine', 44928)]"
+"{('swift', 'swift')}",0.2,0.25,"['ci', 'trickier', 'interop', 'ddc']","{'i2c', 'iokit', 'macos'}",[]
+"{('azure-cosmosdb', 'cosmosdb')}",0.2,0.3333333333333333,"['document', 'method', 'error', 'use']","{'spring', 'spring-boot'}","[('method', 'methods', 26033), ('error', 'error-handling', 20622), ('error', 'compiler-errors', 16373), ('error', 'syntax-error', 7634), ('error', 'runtime-error', 7605), ('use', 'user-interface', 48976), ('use', 'user-controls', 9856)]"
+set(),0.0,0.0,"['character', 'share', 'min', 'word', 'question']","{'string', 'python', 'list', 'python-3.x'}","[('character', 'character-encoding', 13791), ('word', 'ms-word', 15812)]"
+set(),0.0,0.0,"['xlabels', 'survey', 'alphabet', 'row', 'plot']","{'bar-chart', 'dataframe', 'list', 'matplotlib'}","[('plot', 'plot', 29394)]"
+"{('bootstrap-4', 'bootstrap')}",0.2,0.5,"['seperate', 'div', 'target', 'im']",{'html'},[]
+"{('django', 'django')}",0.2,0.3333333333333333,"['appers', 'modelform', 'field', 'form']","{'forms', 'python'}","[('form', 'forms', 101851), ('form', 'django-forms', 15270), ('form', 'format', 10268)]"
+"{('twa', 'twa')}",0.2,0.25,"['svgomg', 'radio', 'audio', 'background']","{'trusted-web-activity', 'android-manifest', 'android-wake-lock'}","[('radio', 'radio-button', 9355), ('audio', 'audio', 31581), ('background', 'background', 13364)]"
+set(),0.0,0.0,"['li', 'xpath', 'tag', 'span', 'child']","{'selenium', 'webdriver', 'drop-down-menu', 'java'}","[('xpath', 'xpath', 32587), ('tag', 'tags', 10030)]"
+"{('matlab', 'matlab'), ('octave', 'octave')}",0.4,0.5,"['interest', 'briefly', 'worth']","{'integral', 'undefined'}",[]
+set(),0.0,0.0,"['htmlobject', 'insertadjacentelement', 'createelement', 'innerhtml', 'explaination']","{'google-chrome', 'javascript', 'dom'}",[]
+set(),0.0,0.0,"['abc', 'phonecallreceiver', 'callreceiver', 'permisison', 'dialers']","{'android', 'java'}",[]
+set(),0.0,0.0,"['zupimages', 'jdfq', 'png', 'document', 'thank']",{'mongodb'},[]
+"{('android-recyclerview', 'recyclerview')}",0.2,0.25,"['onclicklistener', 'cardview', 'txt', 'adapter']","{'firebase', 'kotlin', 'android'}",[]
+"{('midi', 'midi')}",0.2,0.5,"['slider', 'abstraction', 'dollar', 'outlet']",{'puredata'},"[('slider', 'slider', 8781)]"

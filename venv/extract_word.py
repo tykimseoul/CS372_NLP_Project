@@ -10,7 +10,7 @@ from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer 
 
-NUM_DOCUMENTS = 100
+NUM_DOCUMENTS = 1000
 MAX_NUM_TAGS = 5
 INCLUDE_CODE = False
 MAX_DEPTH = 30
@@ -231,7 +231,7 @@ def idf(data):
 if __name__ == "__main__":
     
     data = pd.read_csv(FILE_CORPUS)
-    data = data[:300]
+    data = data[:NUM_DOCUMENTS]
     
     # Construct idf dictionary from whole data
     idf_dict = idf(data)

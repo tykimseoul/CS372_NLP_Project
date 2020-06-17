@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 import re
 import math
 
-NUM_DOCUMENTS = 100
+NUM_DOCUMENTS = 1000
 MAX_NUM_TAGS = 5
 INCLUDE_CODE = False
 FILE_CORPUS = 'question_corpus.csv'
